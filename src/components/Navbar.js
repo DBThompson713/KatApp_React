@@ -32,11 +32,11 @@ class NavbarMain extends Component {
               <Nav.Link class="navitem" href="/FaqPage">
                 FAQ
               </Nav.Link>
-              <div class="kidsCorner">
-                <Nav.Link id="kids" href="/kidsCorner">
-                  Kids Corner
-                </Nav.Link>
-              </div>
+
+              <Nav.Link id="kids" href="/kidsCorner">
+                Kids Corner
+              </Nav.Link>
+
               <div id="myAccountLink">
                 <Nav.Link href="#link">
                   <img id="myAccount" src={myAccount} alt="My Account" />

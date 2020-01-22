@@ -11,8 +11,17 @@
   margin: 0 30px 0 15px;
 }
 
-.kidsCorner#kids {
+.navbar-light .navbar-nav .nav-link:nth-of-type(6) {
   color: aquamarine !important;
+}
+
+.navbar-light .navbar-nav .nav-link:nth-of-type(6):hover {
+  color: grey;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0 5px;
 }
 
 .navbar-light .navbar-nav .nav-link {
