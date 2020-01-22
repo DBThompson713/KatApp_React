@@ -27,13 +27,13 @@ class NavbarMain extends Component {
                 All Recipes
               </Nav.Link>
               <Nav.Link class="navitem" href="#link">
-                Favourite Recipes
+                Favourites
               </Nav.Link>
-              <Nav.Link class="navitem" href="#home">
+              <Nav.Link class="navitem" href="/FaqPage">
                 FAQ
               </Nav.Link>
               <div class="kidsCorner">
-                <Nav.Link class="navitem" href="#home">
+                <Nav.Link id="kids" href="/kidsCorner">
                   Kids Corner
                 </Nav.Link>
               </div>
