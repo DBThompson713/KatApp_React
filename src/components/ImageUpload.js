@@ -12,9 +12,6 @@ const config = {
 };
 
 class ImageUpload extends React.Component {
-  constructor() {
-    super();
-  }
   upload(event) {
     uploadFile(event.target.files[0], config)
       .then(data => {
