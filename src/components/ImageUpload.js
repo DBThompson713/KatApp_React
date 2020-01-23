@@ -5,7 +5,7 @@ import { uploadFile } from "react-s3";
 import ReactDom from "react-dom";
 
 const config = {
-  bucketName: "kat-app-images",
+  bucketName: process.env.REACT_APP_BUCKET_NAME,
   region: "ap-southeast-2",
   accessKeyId: process.env.REACT_APP_ACCESS_KEY,
   secretAccessKey: process.env.REACT_APP_SECRET_KEY
