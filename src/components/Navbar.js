@@ -30,7 +30,7 @@ class NavbarMain extends Component {
                 Favourites
               </Nav.Link>
               <Nav.Link class="navitem" href="/FaqPage">
-                FAQ
+                Discover
               </Nav.Link>
 
               <Nav.Link id="kids" href="/kidsCorner">
