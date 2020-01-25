@@ -7,7 +7,7 @@ class RateRecipe extends Component {
     state = { rating: null };
 
     getRating = async () => {
-        const response = await healthyRecipesApp.get('/recipes/5e29254db1f611a96fe07712/')
+        const response = await healthyRecipesApp.get('/recipes/5e29254db1f611a96fe07712/') // stand in till react routes implemented
             .catch(error => console.log(error));
 
             this.setState({ rating: response.data.ratings.length })
@@ -15,13 +15,13 @@ class RateRecipe extends Component {
 
     // user inputs rating
     onClickRateButton = async (event) => {
-        const response = await healthyRecipesApp.post('/recipes/5e29254db1f611a96fe07712/5e29060db1f611a96fe07709')
+        const response = await healthyRecipesApp.post('/recipes/5e29254db1f611a96fe07712/5e29060db1f611a96fe07709') // stand in till react routes implemented
             .catch(error => console.log(error));
 
         this.setState({ rating: response.data })
     }
 
-    // component did mount make api call and get current rating
+    // component did mount makes api call and gets current rating
     componentDidMount() {
         this.getRating();
     }
