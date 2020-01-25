@@ -1,0 +1,11 @@
+.Rate-Recipe-Container {
+    position: relative;
+    color: black;
+}
+
+.Rate-Recipe-Ticker {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translate(-50%, -50%);
+}
