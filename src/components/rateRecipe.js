@@ -1,40 +1,41 @@
 import React, { Component } from 'react';
 import rateRecipeIcon from './../assets/rateRecipeIcon40px.png'
+import healthyRecipesApp from '../api/healthyRecipesApp';
+import './../styles/RateRecipe.css'
 
 class RateRecipe extends Component {
     state = { rating: null };
 
-    ratingClicked = () => {
-        this.setState(({ rating }) => ({ rating: rating + 1 }));
+    getRating = async () => {
+        const response = await healthyRecipesApp.get('/recipes/5e29254db1f611a96fe07712/')
+            .catch(error => console.log(error));
+
+            this.setState({ rating: response.data.ratings.length })
+    }
+
+    // user inputs rating
+    onClickRateButton = async (event) => {
+        const response = await healthyRecipesApp.post('/recipes/5e29254db1f611a96fe07712/5e29060db1f611a96fe07709')
+            .catch(error => console.log(error));
+
+        this.setState({ rating: response.data })
+    }
+
+    // component did mount make api call and get current rating
+    componentDidMount() {
+        this.getRating();
     }
 
     render() {
         const { rating } = this.state;
 
         return(
-            <div>
-                <button onClick={this.ratingClicked}>
-                    <img src={rateRecipeIcon} alt='carrot icon' />
-                </button>
-                <div>{rating}</div>
+            <div className='Rate-Recipe-Container'>
+                <img src={rateRecipeIcon} alt='carrot with rating ticker' onClick={this.onClickRateButton} />
+                <div className='Rate-Recipe-Ticker' onClick={this.onClickRateButton}>{rating}</div>
             </div>
         );
     }
 }
 
 export default RateRecipe;
-
-
-/*
-    I want the user to be able to see the current recipe rating when they open the recipe
-
-    They should have the ability to click a rating button and the counter to increase by one
-
-    If they click the button again, the counter will decrease by one indicating they have
-    undone their rating
-*/
-// 0) onClick => will send through the user id
-// 1) make a new end point in the recipes routes (recieves user ID)
-// 2) Create a new method in the recipes controller adds users id to ratings array on recipes.
-// 2.1) if id is not in the array add the id. Else remove the id. 
-// 2.2) carrot number must come from the axios call
