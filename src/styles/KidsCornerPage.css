@@ -1,0 +1,39 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#kidsCorner {
+  margin: 8vh auto;
+  background-image: url("./../assets/image1.png");
+  width: 60vw;
+  background-size: contain;
+  height: 100vh;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: bolder;
+  text-shadow: 0px 3px 4px #0000006a;
+  color: #0095dd;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ff99cc;
+}
+
+@media only screen and (max-width: 1000px) {
+  #kidsCorner {
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+}
