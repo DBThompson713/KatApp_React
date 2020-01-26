@@ -11,9 +11,9 @@ class NavbarMain extends Component {
   render() {
     return (
       <Navbar className="navbar" bg="white" expand="lg" fixed="top">
-        <Navbar.Brand href="#home">
+        <NavLink to="/">
           <img id="logo" src={logo} alt="Logo" />
-        </Navbar.Brand>
+        </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -30,7 +30,7 @@ class NavbarMain extends Component {
               Favourites
             </NavLink>
 
-            <NavLink className="navitem m-3 d-flex" to="/FaqPage">
+            <NavLink className="navitem m-3 d-flex" to="/DiscoverPage">
               Discover
             </NavLink>
 
