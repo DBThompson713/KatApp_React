@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./../styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "./../styles/RecipeCard.css";
 import tempImage from "./../assets/Rainbow2.png";
 

@@ -5,48 +5,54 @@ import { Navbar, Nav } from "react-bootstrap";
 import logo from "./../assets/rainbow-mini.jpg";
 import myAccount from "./../assets/my_account.png";
 import "./../styles/Navbar.css";
+import { NavLink } from "react-router-dom";
 
 class NavbarMain extends Component {
   render() {
     return (
-      <>
-        <Navbar class="navbar" bg="white" expand="lg" fixed="top">
-          <Navbar.Brand href="#home">
-            <img id="logo" src={logo} alt="Logo" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link class="navitem" href="#home">
-                Home
-              </Nav.Link>
-              <Nav.Link class="navitem" href="#link">
-                New Recipe
-              </Nav.Link>
-              <Nav.Link class="navitem" href="#home">
-                All Recipes
-              </Nav.Link>
-              <Nav.Link class="navitem" href="#link">
-                Favourites
-              </Nav.Link>
-              <Nav.Link class="navitem" href="/FaqPage">
-                Discover
-              </Nav.Link>
+      <Navbar className="navbar" bg="white" expand="lg" fixed="top">
+        <Navbar.Brand href="#home">
+          <img id="logo" src={logo} alt="Logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <NavLink className="navitem m-3 d-flex" to="/">
+              Home
+            </NavLink>
+            <NavLink className="navitem m-3 d-flex" to="#link">
+              New Recipe
+            </NavLink>
+            <NavLink className="navitem m-3 d-flex" to="#home">
+              All Recipes
+            </NavLink>
+            <NavLink className="navitem m-3 d-flex" to="#link">
+              Favourites
+            </NavLink>
 
-              <Nav.Link id="kids" href="/kidsCorner">
-                Kids Corner
-              </Nav.Link>
+            <NavLink className="navitem m-3 d-flex" to="/FaqPage">
+              Discover
+            </NavLink>
 
-              <div id="myAccountLink">
-                <Nav.Link href="#link">
-                  <img id="myAccount" src={myAccount} alt="My Account" />
-                  My Account
-                </Nav.Link>
-              </div>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </>
+            <Nav.Link className="m-3 d-flex" to="/kidsCorner">
+              Kids Corner
+            </Nav.Link>
+          </Nav>
+          <Nav className="mr-sm-2">
+            <div id="myAccountLink">
+              <Nav.Link href="#link">
+                <img
+                  id="myAccount"
+                  src={myAccount}
+                  alt="My Account"
+                  to="/myAccount"
+                />
+                My Account
+              </Nav.Link>
+            </div>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 }

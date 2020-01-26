@@ -1,19 +1,26 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./../styles/App.css";
-import ImageUpload from "./ImageUpload";
-import RecipeCard from "./RecipeCard";
+// import ImageUpload from "./ImageUpload";
+// import RecipeCard from "./RecipeCard";
 import "bootstrap/dist/css/bootstrap.min.css";
-import HomepageAndBio from "./pages/HomePage";
+import HomePage from "./pages/HomePage";
+import Faqs from "./pages/FaqPage";
+
 import Navbar from "./Navbar";
 
 class App extends Component {
   render() {
     return (
-      <>
-        <Navbar />
-        <HomepageAndBio />
-      </>
+      <BrowserRouter>
+        <>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/FaqPage" component={Faqs} />
+          </Switch>
+        </>
+      </BrowserRouter>
     );
   }
 }

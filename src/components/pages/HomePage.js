@@ -15,7 +15,7 @@ const HomepageAndBio = () => {
         <Container id="homepage">
           <Row id="row1">
             <Col>
-              <img src={tempImage} />
+              <img src={tempImage} alt="Eat the Rainbow" />
             </Col>
 
             {/*  right hand col consists of app name and login page buttons*/}
@@ -46,7 +46,7 @@ const HomepageAndBio = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a href="#">Click here for lorem Ipsum!</a>
+                <a href="www.google.com">Click here for lorem Ipsum!</a>
 
                 <h4>Kids Corner</h4>
                 <p>
@@ -59,12 +59,12 @@ const HomepageAndBio = () => {
 
             {/*  right hand col consists of app name and login page buttons*/}
             <Col xs={5} id="rightTop">
-              <img src={tempImage} />
+              <img src={tempImage} alt="Eating Healthy is fun" />
             </Col>
           </Row>
           <Row id="row3">
             <Col>
-              <img id="bioPic" src={kat} />
+              <img id="bioPic" src={kat} alt="Kat" />
             </Col>
 
             {/*  right hand col consists of app name and login page buttons*/}
@@ -88,10 +88,10 @@ const HomepageAndBio = () => {
               </div>
               <div id="socialButtons">
                 <button>
-                  <img src={instagram} />
+                  <img src={instagram} alt="instagram" />
                 </button>
                 <button>
-                  <img src={facebook} />
+                  <img src={facebook} alt="facebook" />
                 </button>
               </div>
             </Col>
