@@ -5,13 +5,13 @@ import "./../../styles/AllRecipeShows.css";
 
 // This page will be where all recipes are shown to the user or admin
 
-class AllRecipes extends Component {
+class MyAccount extends Component {
   render() {
     return (
       <>
         <Container id="RecipeList">
           <Row id="row1">
-            <h1>All Recipes</h1>
+            <h1>My Account</h1>
           </Row>
         </Container>
       </>
@@ -19,4 +19,4 @@ class AllRecipes extends Component {
   }
 }
 
-export default AllRecipes;
+export default MyAccount;

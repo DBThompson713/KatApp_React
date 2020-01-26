@@ -23,10 +23,10 @@ class NavbarMain extends Component {
             <NavLink className="navitem m-3 d-flex" to="#link">
               New Recipe
             </NavLink>
-            <NavLink className="navitem m-3 d-flex" to="#home">
+            <NavLink className="navitem m-3 d-flex" to="/AllRecipePage">
               All Recipes
             </NavLink>
-            <NavLink className="navitem m-3 d-flex" to="#link">
+            <NavLink className="navitem m-3 d-flex" to="/FavouriteRecipesPage">
               Favourites
             </NavLink>
 
@@ -40,15 +40,15 @@ class NavbarMain extends Component {
           </Nav>
           <Nav className="mr-sm-2">
             <div id="myAccountLink">
-              <Nav.Link href="#link">
+              <NavLink to="/MyAccountPage">
                 <img
                   id="myAccount"
                   src={myAccount}
                   alt="My Account"
-                  to="/myAccount"
+                  to="/MyAccountPage"
                 />
                 My Account
-              </Nav.Link>
+              </NavLink>
             </div>
           </Nav>
         </Navbar.Collapse>

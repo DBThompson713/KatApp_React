@@ -8,6 +8,9 @@ import HomePage from "./pages/HomePage";
 import KidsCorner from "./pages/KidsCornerPage";
 import Discover from "./pages/DiscoverPage";
 import Navbar from "./Navbar";
+import AllRecipes from "./pages/AllRecipePage";
+import FavRecipes from "./pages/FeaturedRecipes";
+import MyAccount from "./pages/MyAccountPage";
 
 class App extends Component {
   render() {
@@ -19,7 +22,9 @@ class App extends Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/DiscoverPage" component={Discover} />
             <Route exact path="/KidsCornerPage" component={KidsCorner} />
-            <Route exact path="/DiscoverPage" component={Discover} />
+            <Route exact path="/AllRecipePage" component={AllRecipes} />
+            <Route exact path="/FavouriteRecipesPage" component={FavRecipes} />
+            <Route exact path="/MyAccountPage" component={MyAccount} />
           </Switch>
         </>
       </BrowserRouter>

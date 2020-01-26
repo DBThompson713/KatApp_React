@@ -14,12 +14,12 @@ const HomepageAndBio = () => {
       {
         <Container id="homepage">
           <Row id="row1">
-            <Col>
+            <Col xs={5}>
               <img src={tempImage} alt="Eat the Rainbow" />
             </Col>
 
             {/*  right hand col consists of app name and login page buttons*/}
-            <Col id="rightTop">
+            <Col id="rightTop" xs={7}>
               <h1>Kats Healthy App</h1>
               <p>Simple, Delicious Recipes for Kids</p>
               <div id="loginButtons">
@@ -38,7 +38,7 @@ const HomepageAndBio = () => {
           </Row>
 
           <Row id="row2">
-            <Col xs={7}>
+            <Col xs={8}>
               <div id="headline">
                 <h6>How does Sugar affect kids with ADHD?</h6>
                 <h6>Why is "Eat The Rainbow"?</h6>
@@ -58,7 +58,7 @@ const HomepageAndBio = () => {
             </Col>
 
             {/*  right hand col consists of app name and login page buttons*/}
-            <Col xs={5} id="rightTop">
+            <Col xs={4} id="rightTop">
               <img src={tempImage} alt="Eating Healthy is fun" />
             </Col>
           </Row>

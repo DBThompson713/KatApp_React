@@ -1,11 +1,14 @@
 /* Common Styling */
 #homepage {
-  margin: 9vh 0 0 0;
+  margin: 8.2vh 0 0 0;
   width: 100vw;
 }
 
 .col-5 {
-  padding-right: 0;
+  padding: 0;
+}
+.col-4 {
+  padding: 0;
 }
 
 .col {
@@ -130,12 +133,17 @@ h1 {
 
   #socialButtons {
     height: 4vh;
-    margin-top: 0.5rem;
+    margin: 0.75rem 0;
   }
 
   #socialButtons img {
     max-height: 3rem;
   }
+  #socialButtons button {
+    border: 0;
+    background-color: transparent;
+  }
+
   #bioPic {
     max-width: 95%;
     height: auto;
