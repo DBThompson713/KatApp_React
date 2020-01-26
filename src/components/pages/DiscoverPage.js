@@ -58,6 +58,7 @@ const Discover = () => {
           </p>
         </div>
         <div id="siteInfo">
+          <hr />
           <h1>How to use the site</h1>
           <div>
             <h4>Nori grape silver beet broccoli kombu beet greens?</h4>
