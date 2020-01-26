@@ -17,7 +17,7 @@ class NavbarMain extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavLink className="navitem m-3 d-flex" to="/">
+            <NavLink className="navitem m-3 d-flex" to="/DashboardPage">
               Home
             </NavLink>
             <NavLink className="navitem m-3 d-flex" to="#link">
