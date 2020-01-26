@@ -34,9 +34,9 @@ class NavbarMain extends Component {
               Discover
             </NavLink>
 
-            <Nav.Link className="m-3 d-flex" to="/kidsCorner">
+            <NavLink className="m-3 d-flex" to="/KidsCornerPage">
               Kids Corner
-            </Nav.Link>
+            </NavLink>
           </Nav>
           <Nav className="mr-sm-2">
             <div id="myAccountLink">
