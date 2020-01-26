@@ -4,11 +4,13 @@ import "./../../styles/KidsCornerPage.css";
 
 const KidsCorner = () => {
   return (
-    <div id="kidsCorner">
-      <h1>Kids Corner</h1>
+    <section id="kidsPage">
+      <div id="kidsCorner">
+        <h1>Kids Corner</h1>
 
-      <h1>Coming Soon</h1>
-    </div>
+        <h1>Coming Soon</h1>
+      </div>
+    </section>
   );
 };
 
