@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import HomePage from "./pages/HomePage";
 import Faqs from "./pages/FaqPage";
 import KidsCorner from "./pages/KidsCornerPage";
+import Discover from "./pages/DiscoverPage";
 import Navbar from "./Navbar";
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/FaqPage" component={Faqs} />
             <Route exact path="/KidsCornerPage" component={KidsCorner} />
+            <Route exact path="/DiscoverPage" component={Discover} />
           </Switch>
         </>
       </BrowserRouter>

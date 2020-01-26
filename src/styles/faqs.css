@@ -19,6 +19,28 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   margin: 11vh auto 0 auto;
   margin-top: 0 auto;
+}
+
+.faqContainer div {
+  margin: 0.5rem 0;
+}
+
+#siteInfo div {
+  margin: 1rem 0 1rem 0;
+  padding-top: 2rem;
+}
+
+hr {
+  margin: 1.5rem 0;
+}
+
+#siteInfoLink {
+  color: #0095dd;
+  margin: 1rem 0 0.5rem 0;
+  float: left;
+  align-self: baseline;
+  font-size: 1.25rem;
 }
