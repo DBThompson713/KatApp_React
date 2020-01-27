@@ -7,8 +7,15 @@ import kat from "./../../assets/temp_kat.png";
 import tempImage from "./../../assets/rainbow-fruit.png";
 import facebook from "./../../assets/image.png";
 import instagram from "./../../assets/instagram-logo.svg";
+import { useAuth0 } from "./../../react-auth0-spa";
 
 const HomepageAndBio = () => {
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { loading } = useAuth0();
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <>
       {
@@ -23,12 +30,17 @@ const HomepageAndBio = () => {
               <h1>Kats Healthy App</h1>
               <p>Simple, Delicious Recipes for Kids</p>
               <div id="loginButtons">
-                <Button variant="success" size="lg">
-                  Login
-                </Button>
-                <Button variant="success" size="lg">
-                  Register
-                </Button>
+                <div>
+                  {!isAuthenticated && (
+                    <Button onClick={() => loginWithRedirect({})}>
+                      Log in / Sign Up
+                    </Button>
+                  )}
+
+                  {isAuthenticated && (
+                    <Button onClick={() => logout()}>Log out</Button>
+                  )}
+                </div>
               </div>
               {/* <div id="moreInfo">
                 <p>More Info</p>

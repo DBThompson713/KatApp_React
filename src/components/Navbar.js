@@ -17,17 +17,17 @@ class NavbarMain extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavLink className="navitem m-3 d-flex" to="/">
+            <NavLink className="navitem m-3 d-flex" to="/DashboardPage">
               Home
             </NavLink>
-            <NavLink className="navitem m-3 d-flex" to="#link">
+            <NavLink className="navitem m-3 d-flex" to="/NewRecipePage">
               New Recipe
             </NavLink>
             <NavLink className="navitem m-3 d-flex" to="/AllRecipePage">
               All Recipes
             </NavLink>
-            <NavLink className="navitem m-3 d-flex" to="/FavouriteRecipesPage">
-              Favourites
+            <NavLink className="navitem m-3 d-flex" to="/FeaturedRecipesPage">
+              Featured Recipes
             </NavLink>
 
             <NavLink className="navitem m-3 d-flex" to="/DiscoverPage">

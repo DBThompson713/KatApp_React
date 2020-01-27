@@ -1,5 +1,5 @@
 import React from "react";
-import kidsImage from "./../../assets/image1.png";
+
 import "./../../styles/KidsCornerPage.css";
 
 const KidsCorner = () => {
