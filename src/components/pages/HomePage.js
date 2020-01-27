@@ -11,6 +11,11 @@ import { useAuth0 } from "./../../react-auth0-spa";
 
 const HomepageAndBio = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { loading } = useAuth0();
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <>
       {

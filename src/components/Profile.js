@@ -4,7 +4,7 @@ import { useAuth0 } from "../react-auth0-spa";
 const Profile = () => {
   const { loading, user } = useAuth0();
 
-  // console.log(user);
+  console.log(user);
 
   if (loading || !user) {
     return <div>Loading...</div>;
@@ -14,7 +14,7 @@ const Profile = () => {
     <Fragment>
       <h2>{user.nickname}</h2>
       <p>{user.email}</p>
-      {/* <code>{JSON.stringify(user, null, 2)}</code> */}
+      <code>{JSON.stringify(user, null, 2)}</code>
     </Fragment>
   );
 };
