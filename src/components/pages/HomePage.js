@@ -47,7 +47,7 @@ const HomepageAndBio = () => {
                   )}
 
                   {isAuthenticated && (
-                    <button onClick={() => logout()}>Log out</button>
+                    <Button onClick={() => logout()}>Log out</Button>
                   )}
                 </div>
                 <Button className="register" variant="danger" size="lg">
