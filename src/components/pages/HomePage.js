@@ -42,7 +42,7 @@ const HomepageAndBio = () => {
                 <div>
                   {!isAuthenticated && (
                     <Button onClick={() => loginWithRedirect({})}>
-                      Log in
+                      Log in / Sign Up
                     </Button>
                   )}
 
@@ -50,9 +50,9 @@ const HomepageAndBio = () => {
                     <Button onClick={() => logout()}>Log out</Button>
                   )}
                 </div>
-                <Button className="register" variant="danger" size="lg">
+                {/* <Button className="register" variant="danger" size="lg">
                   Register
-                </Button>
+                </Button> */}
               </div>
               {/* <div id="moreInfo">
                 <p>More Info</p>
