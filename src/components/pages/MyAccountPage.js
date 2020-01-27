@@ -22,7 +22,7 @@ const MyAccount = () => {
               )}
 
               {isAuthenticated && (
-                <button onClick={() => logout()}>Log out</button>
+                <Button onClick={() => logout()}>Log out</Button>
               )}
             </div>
           </div>
