@@ -26,8 +26,8 @@ class NavbarMain extends Component {
             <NavLink className="navitem m-3 d-flex" to="/AllRecipePage">
               All Recipes
             </NavLink>
-            <NavLink className="navitem m-3 d-flex" to="/FavouriteRecipesPage">
-              Favourites
+            <NavLink className="navitem m-3 d-flex" to="/FeaturedRecipesPage">
+              Featured Recipes
             </NavLink>
 
             <NavLink className="navitem m-3 d-flex" to="/DiscoverPage">

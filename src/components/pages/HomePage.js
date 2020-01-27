@@ -9,20 +9,6 @@ import facebook from "./../../assets/image.png";
 import instagram from "./../../assets/instagram-logo.svg";
 import { useAuth0 } from "./../../react-auth0-spa";
 
-// const NavBar = () => {
-//   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
-
-//   return (
-//     <div>
-//       {!isAuthenticated && (
-//         <button onClick={() => loginWithRedirect({})}>Log in</button>
-//       )}
-
-//       {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
-//     </div>
-//   );
-// };
-
 const HomepageAndBio = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
   return (
@@ -50,9 +36,6 @@ const HomepageAndBio = () => {
                     <Button onClick={() => logout()}>Log out</Button>
                   )}
                 </div>
-                {/* <Button className="register" variant="danger" size="lg">
-                  Register
-                </Button> */}
               </div>
               {/* <div id="moreInfo">
                 <p>More Info</p>

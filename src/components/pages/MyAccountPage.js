@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Button } from "react-bootstrap";
 import "./../../styles/AllRecipeShows.css";
@@ -10,8 +10,9 @@ const MyAccount = () => {
   return (
     <>
       <Container id="RecipeList">
-        <Row id="row1">
-          <h1>My Account</h1>
+        <h1>My Account</h1>
+
+        <Row>
           <div id="loginButtons">
             <div>
               {!isAuthenticated && (
