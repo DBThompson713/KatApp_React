@@ -13,6 +13,7 @@ import Dashboard from "./components/pages/DashboardPage";
 import NewRecipe from "./components/pages/NewRecipePage";
 // import { useAuth0 } from "./react-auth0-spa";
 import PrivateRoute from "./components/PrivateRoute";
+import AdminDashboard from "./components/pages/AdminDashboardPage";
 
 function App() {
   // const { loading } = useAuth0();
@@ -38,6 +39,11 @@ function App() {
           <PrivateRoute exact path="/MyAccountPage" component={MyAccount} />
           <Route exact path="/DashboardPage" component={Dashboard} />
           <PrivateRoute exact path="/NewRecipePage" component={NewRecipe} />
+          <PrivateRoute
+            exact
+            path="/AdminDashboardPage"
+            component={AdminDashboard}
+          />
         </Switch>
       </>
     </BrowserRouter>
