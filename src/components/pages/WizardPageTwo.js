@@ -4,8 +4,8 @@ import { Field, reduxForm, submit } from "redux-form";
 import validate from "./validate";
 import renderField from "./renderField";
 
-const renderError = ({ meta: { touched, error } }) =>
-  touched && error ? <span>{error}</span> : false;
+// const renderError = ({ meta: { touched, error } }) =>
+//   touched && error ? <span>{error}</span> : false;
 
 const WizardPageTwo = props => {
   const { handleSubmit, previousPage } = props;
