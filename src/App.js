@@ -40,7 +40,7 @@ function App() {
           <PrivateRoute exact path="/MyAccountPage" component={MyAccount} />
           <Route exact path="/DashboardPage" component={Dashboard} />
           <PrivateRoute exact path="/NewRecipePage" component={NewRecipe} />
-          <PrivateRoute path="/external-api" component={ExternalApi} />
+          <PrivateRoute path="/ExternalApi" component={ExternalApi} />
           <PrivateRoute
             exact
             path="/AdminDashboardPage"
