@@ -14,6 +14,7 @@ import NewRecipe from "./components/pages/NewRecipePage";
 // import { useAuth0 } from "./react-auth0-spa";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminDashboard from "./components/pages/AdminDashboardPage";
+import ExternalApi from "./views/ExternalApi";
 
 function App() {
   // const { loading } = useAuth0();
@@ -25,7 +26,7 @@ function App() {
   return (
     <BrowserRouter>
       <>
-        <Navbar />
+        {/* <Navbar /> */}
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/DiscoverPage" component={Discover} />
@@ -39,6 +40,7 @@ function App() {
           <PrivateRoute exact path="/MyAccountPage" component={MyAccount} />
           <Route exact path="/DashboardPage" component={Dashboard} />
           <PrivateRoute exact path="/NewRecipePage" component={NewRecipe} />
+          <PrivateRoute path="/ExternalApi" component={ExternalApi} />
           <PrivateRoute
             exact
             path="/AdminDashboardPage"
