@@ -11,7 +11,7 @@ const WizardPageOne = props => {
         <form onSubmit={handleSubmit}>
           <Field name="recipeName" type="text" component={renderField} label="Recipe Name" />
           <Field name="photoUpload" type="image" component={renderField} label="Upload a photo" />
-          <Field name="recipeDescription" type="textarea"
+          <Field name="recipeDescription" type="text-area"
             component={renderField} label="Enter a short description of your dish" />
             <button type="submit" className="next">Next</button>
         </form>
