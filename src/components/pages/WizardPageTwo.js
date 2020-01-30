@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Field, reduxForm, submit } from "redux-form";
 import validate from "./validate";
@@ -15,7 +14,7 @@ const WizardPageTwo = props => {
     <form onSubmit={handleSubmit}>
       <Field name="recipeIngredient" type="text" component={renderField} label="Ingredient + amount" />
       <div>
-        <button type="button" className="previous" onClick={submit}>Add</button>
+        {/* <button type="button" className="previous" onClick={submit}>Add</button> */}
         <button type="button" className="previous" onClick={previousPage}>Previous page</button>
         <button type="submit" className="next">Next page</button>
       </div>

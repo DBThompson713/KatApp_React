@@ -1,6 +1,6 @@
 // NewRecipeForm reducer
 
-import { combineReducers } from "redux";
+import { combineReducers } from "redux"; // combines reducers which make the store
 import { reducer as formReducer } from 'redux-form' // reducer
 
 export default combineReducers({

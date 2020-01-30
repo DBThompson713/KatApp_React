@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'; // npm package: runtime type checking for Re
 import WizardPageOne from './../pages/WizardPageOne'; // recipe description
 import WizardPageTwo from './../pages/WizardPageTwo'; // recipe ingredients
 import WizardPageThree from './../pages/WizardPageThree'; // recipe steps
+import axios from "axios";
+import { connect } from "react-redux"; // container connecting react and redux
 
 class NewRecipeForm extends Component {
   constructor(props) { // defines initial state of component
@@ -23,21 +25,32 @@ class NewRecipeForm extends Component {
     this.setState({ page: this.state.page - 1 }); // navigates backwards one page
   }
 
+  onSubmit =()=>{
+    let data = this.props.form.wizard.values
+    console.log(data)
+    // axios.post('ourUrl')
+  }
+
   render() {
-    const { onSubmit } = this.props;
+    // const { onSubmit } = this.props;
     const { page } = this.state;
     return (
       <div>
         {page === 1 && <WizardPageOne onSubmit={this.nextPage} />}
         {page === 2 && <WizardPageTwo previousPage={this.previousPage} onSubmit={this.nextPage} />}
-        {page === 3 && <WizardPageThree previousPage={this.previousPage} onSubmit={onSubmit} />}
+        {page === 3 && <WizardPageThree previousPage={this.previousPage} onSubmit={this.onSubmit} />}
       </div>
     );
   }
 }
 
+const mapStateToProps = state => {
+  return { form: state.form }
+}
+
+
 NewRecipeForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default NewRecipeForm;
+export default connect(mapStateToProps, {  })(NewRecipeForm)
