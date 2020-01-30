@@ -1,29 +1,54 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, Accordion, Container, Row, Col } from 'react-bootstrap';
+import { Card, InputGroup, FormControl, Button, Container, Col, Row } from 'react-bootstrap';
+import './../styles/Comment.css'
 
 
 class Comment extends Component {
     render() {
         return(
             <>
-                <Accordion defaultActiveKey="0" >
-                    <Card >
-                        <Accordion.Toggle as={Card.Header} eventKey="0">
-                        Comments
-                        </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0">
-                        <Card.Body>
+                <Card style={{ margin: '10px' }}>
+                    <Card.Header as="h4">Comments</Card.Header>
+                    <Card.Body>
+                        <InputGroup className="mb-3">
+                            <FormControl
+                            aria-label="Add comment"
+                            aria-describedby="basic-addon2"
+                            />
+                            <InputGroup.Append>
+                                <Button variant="outline-secondary">Add</Button>
+                            </InputGroup.Append>
+                        </InputGroup>
                         <Container>
-                            <Row>
-                                <Col sm={8}>Title</Col>
-                                <Col sm={4}>Date</Col>
+                            <Row bsPrefix="custom-comment-row">
+                                <Col xs={12} md={8}>
+                                    <Card.Title as="h5">Bob Dole</Card.Title>
+                                </Col>
+                                <Col xs={6} md={4}>
+                                    <Card.Title as="h6">19.05.20</Card.Title>
+                                </Col>
                             </Row>
                         </Container>
-                        </Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                </Accordion>
+                        <Card.Text>
+                        With supporting text below as a natural lead-in to additional content.
+                        </Card.Text>
+                        <hr></hr>
+                        <Container>
+                            <Row bsPrefix="custom-comment-row">
+                                <Col xs={12} md={8}>
+                                    <Card.Title as="h5">John Kerry</Card.Title>
+                                </Col>
+                                <Col xs={6} md={4}>
+                                    <Card.Title as="h6">21.05.20</Card.Title>
+                                </Col>
+                            </Row>
+                        </Container>
+                        <Card.Text>
+                        With supporting text below as a natural lead-in to additional content.
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
             </>
         );
     }
@@ -32,6 +57,7 @@ class Comment extends Component {
 export default Comment;
 
 /*
+bsPrefix="custom-comment-row"
     What am I trying to do?
     - Build a comment component that allows users to input comments then display those comments
 
