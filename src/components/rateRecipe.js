@@ -14,6 +14,7 @@ class RateRecipe extends Component {
     // }
 
     // user inputs rating
+
     onClickRateButton = async (event) => {
         const response = await healthyRecipesApp.post('/recipes/5e29254db1f611a96fe07712/5e29060db1f611a96fe07709') // stand in till react routes implemented
             .catch(error => console.log(error));

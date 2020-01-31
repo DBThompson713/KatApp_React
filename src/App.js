@@ -27,7 +27,7 @@ function App() {
   return (
     <BrowserRouter>
       <>
-        {/* <Navbar /> */}
+        <Navbar />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/DiscoverPage" component={Discover} />
