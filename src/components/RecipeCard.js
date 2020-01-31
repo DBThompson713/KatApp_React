@@ -1,24 +1,29 @@
 import React, { Component } from "react";
 import "./../styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card } from "react-bootstrap";
+import { Card, Container, Row, Col } from "react-bootstrap";
 import "./../styles/RecipeCard.css";
 import tempImage from "./../assets/Rainbow2.png";
+import unfavouritedIcon from "./../assets/unfavourited-icon-50px.png";
+import RateRecipe from "./RateRecipe";
 
 class RecipeCard extends Component {
   render() {
+
     return (
       <>
-        <div class="MainCard">
+        <div className="MainCard">
           <Card style={{ width: "18rem" }}>
             <Card.Img id="mainRecipeImage" variant="top" src={tempImage} />
             <Card.Body>
-              <Card.Title>Some Kind of Food</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Card.Text> Carrot yums</Card.Text>
+                <Container>
+                    <Row>
+                        <Col xs={9}><Card.Title>{this.props.recipe.title}</Card.Title></Col>
+                        <Col xs={3}><img src={unfavouritedIcon} alt="empty heart" /></Col>
+                    </Row>
+                </Container>
+                <Card.Text>{this.props.recipe.description}</Card.Text>
+                <Card.Text><RateRecipe /></Card.Text>
             </Card.Body>
           </Card>
         </div>
