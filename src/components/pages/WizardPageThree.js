@@ -7,30 +7,40 @@ const WizardPageThree = props => {
   const { handleSubmit, pristine, previousPage, submitting } = props;
   return (
       <div>
-          <h1>New Recipe</h1>
+          <h1>WizardPageThree.js</h1>
         <form onSubmit={handleSubmit}>
-        <div>
-        <Field name="recipeStep" type="textarea" 
-        component={renderField} 
-        onClick={submit}
-         label="Step 1" />
-        {/* <Field name="recipeStep" type="textarea"
-         component={renderField} 
-         onClick={submit} label="Step 2" />
-        <Field name="recipeStep" type="textarea"
-        component={renderField} 
-          onClick={submit} label="Step 3" /> */}
+          <div>
+            <Field 
+              name="recipeStep" 
+              type="textarea" 
+              component={renderField} 
+              onClick={submit}
+              label="Step 1"
+            />
             <div>
-                <button type="button" className="previous" onClick={submit}>Add a Step</button>
-            </div>
-            {/* <div>
-                <button type="button" className="previous" onClick={submit}>Submit Recipe?</button>
-            </div> */}
+              <button 
+                  type="button" 
+                  className="previous" 
+                  onClick={submit}>
+                  Add a Step
+              </button>
             </div>
             <div>
-                <button type="button" className="previous" onClick={previousPage}>Previous</button>
-                <button type="submit" onClick={submit} disabled={pristine || submitting}>Submit</button>
+                <button // button: previous
+                  type="button" 
+                  className="previous" 
+                  onClick={previousPage}>
+                  Previous
+                </button>
+                <button // button: submit form
+                  type="submit" 
+                  onClick={submit}
+                  // pristine = form untouched
+                  disabled={pristine || submitting}>
+                  click to submit recipe
+                </button>
             </div>
+          </div>
         </form>
     </div>
   );

@@ -1,24 +1,31 @@
 import React from "react";
-import { Field, reduxForm, submit } from "redux-form";
+import { Field, reduxForm, } from "redux-form"; // removed submit from destructuring
 import validate from "./validate";
 import renderField from "./renderField";
-
-// const renderError = ({ meta: { touched, error } }) =>
-//   touched && error ? <span>{error}</span> : false;
 
 const WizardPageTwo = props => {
   const { handleSubmit, previousPage } = props;
   return (
     <div>
-      <h1>New Recipe</h1>
-    <form onSubmit={handleSubmit}>
-      <Field name="recipeIngredient" type="text" component={renderField} label="Ingredient + amount" />
-      <div>
-        {/* <button type="button" className="previous" onClick={submit}>Add</button> */}
-        <button type="button" className="previous" onClick={previousPage}>Previous page</button>
-        <button type="submit" className="next">Next page</button>
-      </div>
-    </form>
+      <h1>WizardPageTwo.js</h1>
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="recipeIngredient" 
+            type="text" 
+            component={renderField} 
+            label="Ingredient + amount" 
+          />
+            <div>
+              <button // button: add another recipe ingredient
+                type="button" 
+                className="previous"
+                /*onClick={() => fields.push({})}*/>
+                Add another recipe ingredient
+              </button>
+              <button type="button" className="previous" onClick={previousPage}>Previous page</button>
+              <button type="submit" className="next">Next page</button>
+            </div>
+        </form>
     </div>
   );
 };
