@@ -1,6 +1,6 @@
 import React from "react";
 import "normalize.css";
-import "./../../styles/Homepage-and-bio.css";
+import "./../../styles/Homepage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import kat from "./../../assets/temp_kat.png";
@@ -22,7 +22,11 @@ const HomepageAndBio = () => {
         <Container id="homepage">
           <Row id="row1 homePageRow">
             <Col xs={5}>
-              <img src={tempImage} alt="Eat the Rainbow" />
+              <img
+                id="halfScreenImages"
+                src={tempImage}
+                alt="Eat the Rainbow"
+              />
             </Col>
 
             {/*  right hand col consists of app name and login page buttons*/}
@@ -71,7 +75,11 @@ const HomepageAndBio = () => {
 
             {/*  right hand col consists of app name and login page buttons*/}
             <Col xs={4} id="rightTop">
-              <img src={tempImage} alt="Eating Healthy is fun" />
+              <img
+                id="halfScreenImagesTwo"
+                src={tempImage}
+                alt="Eating Healthy is fun"
+              />
             </Col>
           </Row>
           <Row id="row3 homePageRow">

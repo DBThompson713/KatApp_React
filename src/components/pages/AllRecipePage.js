@@ -2,25 +2,26 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "react-bootstrap";
 import "./../../styles/AllRecipeShows.css";
-import healthyRecipesApp from './../../api/healthyRecipesApp';
-import RecipeCard from './../RecipeCard';
+import healthyRecipesApp from "./../../api/healthyRecipesApp";
+import RecipeCard from "./../RecipeCard";
 
 // This page will be where all recipes are shown to the user or admin
 
 class AllRecipes extends Component {
-    state = { recipes: [] };
+  state = { recipes: [] };
 
-    getRecipes = async () => {
-        const response = await healthyRecipesApp.get('/recipes/')
-        .catch(error => console.log(error));
-        console.log(response.data) // remove later
+  getRecipes = async () => {
+    const response = await healthyRecipesApp
+      .get("/recipes/")
+      .catch(error => console.log(error));
+    // console.log(response.data) // remove later
 
-        this.setState({ recipes: response.data })
-    }
+    this.setState({ recipes: response.data });
+  };
 
-    componentDidMount() {
-        this.getRecipes();
-    }
+  componentDidMount() {
+    this.getRecipes();
+  }
 
   render() {
     const { recipes } = this.state;
@@ -30,11 +31,9 @@ class AllRecipes extends Component {
         <Container id="RecipeList">
           <Row id="row1">
             <h1>All Recipes</h1>
-            {
-                recipes.map(recipe => {
-                    return <RecipeCard recipe={recipe} key={recipe._id} />
-                })
-            }            
+            {recipes.map(recipe => {
+              return <RecipeCard recipe={recipe} key={recipe._id} />;
+            })}
           </Row>
         </Container>
       </>
