@@ -15,6 +15,7 @@ import NewRecipe from "./components/pages/NewRecipePage";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminDashboard from "./components/pages/AdminDashboardPage";
 import ExternalApi from "./views/ExternalApi";
+import ViewRecipe from "./components/pages/RecipePage";
 
 function App() {
   // const { loading } = useAuth0();
@@ -46,6 +47,7 @@ function App() {
             path="/AdminDashboardPage"
             component={AdminDashboard}
           />
+          <Route exact path="/RecipePage" component={ViewRecipe} />
         </Switch>
       </>
     </BrowserRouter>
