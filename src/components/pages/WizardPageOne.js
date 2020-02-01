@@ -1,33 +1,35 @@
-import React from 'react';
-import { Field, reduxForm } from 'redux-form';
-import validate from './validate';
-import renderField from './renderField';
+import React from "react";
+import { Field, reduxForm } from "redux-form";
+import validate from "./validate";
+import renderField from "./renderField";
+import imageUpload from "./../ImageUpload";
 
 const WizardPageOne = props => {
   const { handleSubmit } = props;
   return (
     <div>
       <h1>WizardPageOne.js</h1>
-        <form onSubmit={handleSubmit}>
-          <Field // holds recipe name
-            name="recipeName" 
-            type="text" 
-            component={renderField} 
-            label="Recipe Name"
-          />
-          {/* <Field name="photoUpload" type="image" component={renderField} label="Upload a photo" /> */}
-          <Field // holds recipe description
-            name="recipeDescription" 
-            type="text-area"
-            component={renderField} 
-            label="Enter a short description of your dish" 
-          />
-            <button // button: next
-              type="submit" 
-              className="next">
-              Next Page
-            </button>
-        </form>
+      <form onSubmit={handleSubmit}>
+        <Field // holds recipe name
+          name="recipeName"
+          type="text"
+          component={renderField}
+          label="Recipe Name"
+        />
+        <Field name="photoUpload" type="file" component={imageUpload} />
+        <Field // holds recipe description
+          name="recipeDescription"
+          type="text-area"
+          component={renderField}
+          label="Enter a short description of your dish"
+        />
+        <button // button: next
+          type="submit"
+          className="next"
+        >
+          Next Page
+        </button>
+      </form>
     </div>
   );
 };
@@ -64,5 +66,5 @@ export default reduxForm({
   // form: "FieldArrays",
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-  validate,
+  validate
 })(WizardPageOne);
