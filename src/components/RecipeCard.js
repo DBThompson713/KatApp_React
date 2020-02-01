@@ -5,7 +5,7 @@ import { Card, Container, Row, Col } from "react-bootstrap";
 import "./../styles/RecipeCard.css";
 import tempImage from "./../assets/Rainbow2.png";
 import unfavouritedIcon from "./../assets/unfavourited-icon-50px.png";
-import RateRecipe from "./RateRecipe";
+import RateRecipe from "./rateRecipe";
 
 class RecipeCard extends Component {
   render() {

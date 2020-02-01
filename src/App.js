@@ -47,7 +47,7 @@ function App() {
             path="/AdminDashboardPage"
             component={AdminDashboard}
           />
-          <Route exact path="/RecipePage" component={ViewRecipe} />
+          <Route exact path="/RecipePage/:id" component={ViewRecipe} />
         </Switch>
       </>
     </BrowserRouter>
