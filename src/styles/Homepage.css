@@ -100,7 +100,14 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  padding: 0 2rem;
+  padding: 13rem 2rem 0 2rem;
+}
+
+#row3 .col-lg-4 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #row3 h1 {
@@ -112,6 +119,7 @@ h1 {
   max-width: 80%;
   border-radius: 80%;
   margin-left: 10%;
+  padding-top: 50%;
 }
 
 #socialButtons {
@@ -137,6 +145,19 @@ h1 {
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 15%;
+  }
+
+  #Homepage.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    align-items: center;
+  }
+
+  #secondRowImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 0;
   }
 
   #loginButtons .btn {
@@ -177,5 +198,6 @@ h1 {
     height: auto;
     border-radius: 80%;
     margin-left: 1%;
+    padding-top: 80%;
   }
 }

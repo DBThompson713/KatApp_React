@@ -14,7 +14,7 @@ class AllRecipes extends Component {
     const response = await healthyRecipesApp
       .get("/recipes/")
       .catch(error => console.log(error));
-    // console.log(response.data) // remove later
+    console.log(response.data); // remove later
 
     this.setState({ recipes: response.data });
   };

@@ -1,6 +1,6 @@
 import React from "react";
 import "normalize.css";
-import "./../../styles/Homepage.css";
+import "./.././../styles/Homepage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import kat from "./../../assets/temp_kat.png";
@@ -9,7 +9,7 @@ import facebook from "./../../assets/image.png";
 import instagram from "./../../assets/instagram-logo.svg";
 import { useAuth0 } from "./../../react-auth0-spa";
 
-const HomepageAndBio = () => {
+const Homepage = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const { loading } = useAuth0();
 
@@ -74,7 +74,7 @@ const HomepageAndBio = () => {
             </Col>
 
             {/*  right hand col consists of app name and login page buttons*/}
-            <Col xs={4} id="rightTop">
+            <Col xs={4} id="secondRowImage">
               <img
                 id="halfScreenImagesTwo"
                 src={tempImage}
@@ -83,23 +83,22 @@ const HomepageAndBio = () => {
             </Col>
           </Row>
           <Row id="row3 homePageRow">
-            <Col>
+            <Col xs={6} lg={4}>
               <img id="bioPic" src={kat} alt="Kat" />
             </Col>
 
             {/*  right hand col consists of app name and login page buttons*/}
-            <Col>
+            <Col xs={6} lg={8}>
               <div id="bio">
                 <h1>Hi I'm Kat.</h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, dhjhe
-                  aliqua. Ut enim ad minim veniam ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.
+                  aliqua. Ut enim ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.
                 </p>
                 <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  eu fugiat nulla pariatur. Excepteur deserunt mollit anim id
-                  est laborum.
+                  Duis aute irure dolor in reprehenderit. Excepteur deserunt
+                  mollit anim id est laborum.
                 </p>
                 <p>
                   sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -122,4 +121,4 @@ const HomepageAndBio = () => {
   );
 };
 
-export default HomepageAndBio;
+export default Homepage;
