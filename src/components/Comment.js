@@ -2,9 +2,29 @@ import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, InputGroup, FormControl, Button, Container, Col, Row } from 'react-bootstrap';
 import './../styles/Comment.css'
+import healthyRecipesApp from './../api/healthyRecipesApp';
 
 
 class Comment extends Component {
+    // state = { comments: [] };
+
+    // setComments() {
+    //     this.setState({ comments: this.props.recipe.comments })
+    // }
+
+    // onClickAddComment = async (event) => {
+    //     let { id } = this.props.match.params;
+    //     const response = await healthyRecipesApp.post(`/recipes/${id}/comment`)
+    //     .catch(error => console.log(error));
+    //     console.log(response)
+    
+    //     // this.setState({ recipe: response.data })
+    // }
+
+    // componentDidMount() {
+    //     this.setComments();
+    // }
+
     render() {
         return(
             <>
@@ -55,26 +75,3 @@ class Comment extends Component {
 }
 
 export default Comment;
-
-/*
-bsPrefix="custom-comment-row"
-    What am I trying to do?
-    - Build a comment component that allows users to input comments then display those comments
-
-    Features/Styling
-    - All expanded card on the desktop version
-    - Collapsed default on mobile version
-
-    Tasks
-    - Build basically styling and make sure core functionality works
-    - Make api call to grab comments info
-
-                            <Container>
-                                <Row>
-                                    <Col><h3>John Kerry</h3></Col>
-                                    <Col xs={6}></Col>
-                                    <Col>21.05.20</Col>
-                                </Row>
-                            </Container>
-
-*/
