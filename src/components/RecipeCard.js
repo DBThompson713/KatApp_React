@@ -9,21 +9,26 @@ import RateRecipe from "./rateRecipe";
 
 class RecipeCard extends Component {
   render() {
-
     return (
       <>
         <div className="MainCard">
           <Card style={{ width: "18rem" }}>
             <Card.Img id="mainRecipeImage" variant="top" src={tempImage} />
             <Card.Body>
-                <Container>
-                    <Row>
-                        <Col xs={9}><Card.Title>{this.props.recipe.title}</Card.Title></Col>
-                        <Col xs={3}><img src={unfavouritedIcon} alt="empty heart" /></Col>
-                    </Row>
-                </Container>
-                <Card.Text>{this.props.recipe.description}</Card.Text>
-                <Card.Text><RateRecipe /></Card.Text>
+              <Container>
+                <Row>
+                  <Col xs={9}>
+                    <Card.Title>{this.props.recipe.title}</Card.Title>
+                  </Col>
+                  <Col xs={3}>
+                    <img src={unfavouritedIcon} alt="empty heart" />
+                  </Col>
+                </Row>
+              </Container>
+              <Card.Text>{this.props.recipe.description}</Card.Text>
+              <Card.Text>
+                <RateRecipe />
+              </Card.Text>
             </Card.Body>
           </Card>
         </div>
