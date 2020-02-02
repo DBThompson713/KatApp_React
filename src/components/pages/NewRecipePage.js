@@ -23,7 +23,7 @@ class NewRecipe extends Component {
       <>
         <Container id="RecipeList">
           <Row id="row1">
-            <h1>New Recipe</h1>
+            <h1 className="h1" >New Recipe</h1>
             <NewRecipeForm />
             <p>{this.state.form}</p>
           </Row>

@@ -1,0 +1,19 @@
+#recipeFormStyle div {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+
+#recipeFormStyle p { 
+    color: #a1a1a1;
+    font-weight: 350;
+}
+
+ .nextButton {
+    color: #535755;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+    border: transparent;
+    cursor: pointer;
+    margin-left: 70%;
+} 

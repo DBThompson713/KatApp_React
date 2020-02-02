@@ -38,40 +38,6 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 //   </ul>
 // )
 
-const renderIngredients = ({ fields, meta: { error, submitFailed } }) => (
-  <ul>
-    <li>
-      <button type="button" onClick={() => fields.push()}>
-        Add Ingredient
-      </button>
-      {submitFailed && error && <span>{error}</span>}
-    </li>
-    {fields.map((ingredient, index) => (
-      <li key={index}>
-        {/* <button
-          type="button"
-          title="Remove Ingredient"
-          onClick={() => fields.remove(index)}
-        /> */}
-        <h4>Ingredient #{index + 1}</h4>
-        <Field
-          name={`${ingredient}`}
-          type="text"
-          component={renderField}
-          label="Ingredient"
-        />
-        <Field
-          name={`${ingredient}`}
-          type="text"
-          component={renderField}
-          label="INGREDIENT"
-        />
-        <FieldArray name={`${ingredient}`} component={renderField} />
-      </li>
-    ))}
-  </ul>
-)
-
 const FieldArraysForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
   return (
@@ -80,8 +46,8 @@ const FieldArraysForm = props => {
         name="recipeIngredient"
         type="text"
         component={renderField}
-        label="Recipe Ingredient"
-      />
+        label="Ingredientz"
+        />
       <FieldArray name="ingredients" component={renderIngredients} />
       <div>
         <button type="submit" disabled={submitting}>
@@ -94,6 +60,42 @@ const FieldArraysForm = props => {
     </form>
   )
 }
+
+const renderIngredients = ({ fields, meta: { error, submitFailed } }) => (
+  <ul>
+    <li>
+      <button type="button" onClick={() => fields.push()}>
+        Add Ingredient
+      </button>
+      {submitFailed && error && <span>{error}</span>}
+    </li>
+    {console.log(fields)}
+    {fields.map((ingredient, index) => (
+      <li key={index}>
+        {/* <button
+          type="button"
+          title="Remove Ingredient"
+          onClick={() => fields.remove(index)}
+        /> */}
+        <h4>Ingredient #{index + 1}</h4>
+        {/* <Field
+          name={`${ingredient}`}
+          type="text"
+          component={renderField}
+          label="Ingredient"
+        />
+        <Field
+          name={`${ingredient}`}
+          type="text"
+          component={renderField}
+          label="INGREDIENT" */}
+        {/* /> */}
+        {console.log(ingredient)};
+        <FieldArray name={`${ingredient}`} component={renderField} />
+      </li>
+    ))}
+  </ul>
+)
 
 export default reduxForm({
   form: 'fieldArrays', // a unique identifier for this form
