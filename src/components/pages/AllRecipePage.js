@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "react-bootstrap";
 import "./../../styles/AllRecipeShows.css";
@@ -31,9 +32,11 @@ class AllRecipes extends Component {
         <Container id="RecipeList">
           <Row id="row1">
             <h1>All Recipes</h1>
-            {recipes.map(recipe => {
-              return <RecipeCard recipe={recipe} key={recipe._id} />;
-            })}
+            {
+                recipes.map(recipe => {
+                    return <Link to={`RecipePage/${recipe._id}`}><RecipeCard recipe={recipe} key={recipe._id} /></Link>
+                })
+            }            
           </Row>
         </Container>
       </>
