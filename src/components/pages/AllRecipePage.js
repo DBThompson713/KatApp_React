@@ -14,9 +14,9 @@ class AllRecipes extends Component {
     getRecipes = async () => {
         const response = await healthyRecipesApp.get('/recipes/')
         .catch(error => console.log(error));
-        console.log(response.data) // remove later
+        // console.log(response.data) // remove later
 
-        this.setState({ recipes: response.data })
+        // this.setState({ recipes: response.data })
     }
 
     componentDidMount() {
