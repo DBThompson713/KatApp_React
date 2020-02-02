@@ -29,20 +29,29 @@ const renderIngredients = ({
   <>
     {/* <ul id="ingredientAdd"> */}
     {fields.map((ingredient, index) => (
-      <li key={index}>
+      <div id="inputFields">
+        {/* {index} */}
+
+        {/* <h4>Ingredient #{index + 1}</h4> */}
+        <p>
+          Add Ingredient:
+          <Field
+            name={`${ingredient}`}
+            type="text"
+            component={renderField}
+            placeholder="Ingredient"
+
+            // label="Add Ingredient Here"
+          />
+        </p>
+
         <button
+          id="removeButton"
           type="button"
           title="Remove Ingredient"
           onClick={() => fields.remove(index)}
         />
-        {/* <h4>Ingredient #{index + 1}</h4> */}
-        <Field
-          name={`${ingredient}`}
-          type="text"
-          component={renderField}
-          label="Add Ingredient Here"
-        />
-      </li>
+      </div>
     ))}
     {/* </ul> */}
 
