@@ -1,88 +1,15 @@
-import React from 'react'
-import { Field, FieldArray, reduxForm } from 'redux-form'
-// import validate from './validate'
-
-const renderField = ({ input, label, type, meta: { touched, error } }) => (
-  <div>
-    <label>{label}</label>
-    <div>
-      <input {...input} type={type} placeholder={label} />
-      {touched && error && <span>{error}</span>}
-    </div>
-  </div>
-)
-
-// const renderHobbies = ({ fields, meta: { error } }) => (
-//   <ul>
-//     <li>
-//       <button type="button" onClick={() => fields.push()}>
-//         Add Hobby
-//       </button>
-//     </li>
-//     {fields.map((hobby, index) => (
-//       <li key={index}>
-//         <button
-//           type="button"
-//           title="Remove Hobby"
-//           onClick={() => fields.remove(index)}
-//         />
-//         <Field
-//           name={hobby}
-//           type="text"
-//           component={renderField}
-//           label={`Hobby #${index + 1}`}
-//         />
-//       </li>
-//     ))}
-//     {error && <li className="error">{error}</li>}
-//   </ul>
-// )
-
-const renderIngredients = ({ fields, meta: { error, submitFailed } }) => (
-  <ul>
-    <li>
-      <button type="button" onClick={() => fields.push()}>
-        Add Ingredient
-      </button>
-      {submitFailed && error && <span>{error}</span>}
-    </li>
-    {fields.map((ingredient, index) => (
-      <li key={index}>
-        {/* <button
-          type="button"
-          title="Remove Ingredient"
-          onClick={() => fields.remove(index)}
-        /> */}
-        <h4>Ingredient #{index + 1}</h4>
-        <Field
-          name={`${ingredient}`}
-          type="text"
-          component={renderField}
-          label="Ingredient"
-        />
-        <Field
-          name={`${ingredient}`}
-          type="text"
-          component={renderField}
-          label="INGREDIENT"
-        />
-        <FieldArray name={`${ingredient}`} component={renderField} />
-      </li>
-    ))}
-  </ul>
-)
+import React from "react";
+import { Field, FieldArray, reduxForm } from "redux-form";
+import validate from "./validate";
+import renderField from "./renderField";
+import FAExample from "./../../styles/FAExample.css";
+// import { Container, Row } from "react-bootstrap";
 
 const FieldArraysForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props
+  const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-      <Field
-        name="recipeIngredient"
-        type="text"
-        component={renderField}
-        label="Recipe Ingredient"
-      />
-      <FieldArray name="ingredients" component={renderIngredients} />
+      <FieldArray name="Ingredients" component={renderIngredients} />
       <div>
         <button type="submit" disabled={submitting}>
           Submit
@@ -92,10 +19,44 @@ const FieldArraysForm = props => {
         </button>
       </div>
     </form>
-  )
-}
+  );
+};
+
+const renderIngredients = ({
+  fields,
+  meta: { touched, error, submitFailed }
+}) => (
+  <>
+    {/* <ul id="ingredientAdd"> */}
+    {fields.map((ingredient, index) => (
+      <li key={index}>
+        <button
+          type="button"
+          title="Remove Ingredient"
+          onClick={() => fields.remove(index)}
+        />
+        {/* <h4>Ingredient #{index + 1}</h4> */}
+        <Field
+          name={`${ingredient}`}
+          type="text"
+          component={renderField}
+          label="Add Ingredient Here"
+        />
+      </li>
+    ))}
+    {/* </ul> */}
+
+    <button type="button" onClick={() => fields.push()}>
+      Add Ingredient
+    </button>
+    {(touched || submitFailed) && error && <span>{error}</span>}
+  </>
+);
 
 export default reduxForm({
-  form: 'fieldArrays', // a unique identifier for this form
-//   validate
-})(FieldArraysForm)
+  form: "wizard", // a unique identifier for this form
+  //   validate
+  destroyOnUnmount: false,
+  forceUnregisterOnUnmount: true,
+  validate
+})(FieldArraysForm);

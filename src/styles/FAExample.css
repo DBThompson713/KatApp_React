@@ -1,0 +1,17 @@
+form {
+  margin: 20vh auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#ingredientAdd li {
+  height: 2rem;
+  border: 1px solid black;
+  list-style-type: none;
+}
+
+#ingredientsAdd input {
+  border: 1px solid black;
+}

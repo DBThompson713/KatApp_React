@@ -14,6 +14,7 @@ import NewRecipe from "./components/pages/NewRecipePage";
 import { useAuth0 } from "./react-auth0-spa";
 import PrivateRoute from "./components/PrivateRoute";
 import { Provider } from "react-redux";
+import fieldArrays from "./components/pages/FieldArrayExample";
 
 function App() {
   const { loading } = useAuth0();
@@ -36,6 +37,8 @@ function App() {
             path="/FeaturedRecipesPage"
             component={FeaturedRecipes}
           />
+
+          <Route exact path="/FieldArrayExample" component={fieldArrays} />
           <PrivateRoute exact path="/MyAccountPage" component={MyAccount} />
           <Route exact path="/DashboardPage" component={Dashboard} />
           <PrivateRoute exact path="/NewRecipePage" component={NewRecipe} />
