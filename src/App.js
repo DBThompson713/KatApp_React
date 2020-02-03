@@ -11,18 +11,20 @@ import FeaturedRecipes from "./components/pages/FeaturedRecipesPage";
 import MyAccount from "./components/pages/MyAccountPage";
 import Dashboard from "./components/pages/DashboardPage";
 import NewRecipe from "./components/pages/NewRecipePage";
-// import { useAuth0 } from "./react-auth0-spa";
+import { useAuth0 } from "./react-auth0-spa";
 import PrivateRoute from "./components/PrivateRoute";
+import { Provider } from "react-redux";
 import AdminDashboard from "./components/pages/AdminDashboardPage";
 import ExternalApi from "./views/ExternalApi";
 import ViewRecipe from "./components/pages/RecipePage";
 
-function App() {
-  // const { loading } = useAuth0();
 
-  // if (loading) {
-  //   return <div>Site Loading...</div>;
-  // }
+function App() {
+  const { loading } = useAuth0();
+
+  if (loading) {
+    return <div>Site Loading...</div>;
+  }
 
   return (
     <BrowserRouter>
@@ -38,6 +40,7 @@ function App() {
             path="/FeaturedRecipesPage"
             component={FeaturedRecipes}
           />
+
           <PrivateRoute exact path="/MyAccountPage" component={MyAccount} />
           <PrivateRoute exact path="/DashboardPage" component={Dashboard} />
           <PrivateRoute exact path="/NewRecipePage" component={NewRecipe} />

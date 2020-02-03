@@ -31,8 +31,8 @@ const Homepage = () => {
 
             {/*  right hand col consists of app name and login page buttons*/}
             <Col id="rightTop" xs={7}>
-              <h1>Kats Healthy App</h1>
-              <p>Simple, Delicious Recipes for Kids</p>
+              <h1>WellKids</h1>
+              <p>Not affiliated with the grudge.</p>
               <div id="loginButtons">
                 <div>
                   {!isAuthenticated && (
