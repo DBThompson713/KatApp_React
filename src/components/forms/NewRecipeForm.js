@@ -7,7 +7,7 @@ import WizardPageThree from "./../pages/WizardPageThree"; // recipe steps
 import { connect } from "react-redux"; // container connecting react and redux
 import { FieldArray } from "redux-form";
 import FieldArraysForm from "./../pages/FieldArrayForm";
-import "./../../styles/FAExample.css";
+import "./../../styles/recipeForm.css";
 
 class NewRecipeForm extends Component {
   constructor(props) {

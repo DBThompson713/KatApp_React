@@ -27,7 +27,7 @@ const HomepageAndBio = () => {
 
             {/*  right hand col consists of app name and login page buttons*/}
             <Col id="rightTop" xs={7}>
-              <h1>Kats Healthy App</h1>
+              <h1>KidsWell</h1>
               <p>Simple, Delicious Recipes for Kids</p>
               <div id="loginButtons">
                 <div>

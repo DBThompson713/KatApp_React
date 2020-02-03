@@ -24,21 +24,25 @@ const renderSteps = ({ fields, meta: { touched, error, submitFailed } }) => (
   <>
     {/* <ul id="ingredientAdd"> */}
     {fields.map((step, index) => (
-      <li key={index}>
-        <button
-          type="button"
-          title="Remove Step"
-          onClick={() => fields.remove(index)}
-        />
-        {/* <h4>Ingredient #{index + 1}</h4> */}
-        <Field
-          name={`${step}`}
-          type="text"
-          component={renderField}
-          label="Add Step Here"
-        />
-      </li>
+      <React.Fragment key={index}>
+        <div id="inputFields">
+          {/* <h4>Ingredient #{index + 1}</h4> */}
+          <Field
+            name={`${step}`}
+            type="text"
+            component={renderField}
+            label={`Step ${index + 1}`}
+          />
+          <button
+            id="removeButton"
+            type="button"
+            title="Remove Step"
+            onClick={() => fields.remove(index)}
+          />
+        </div>
+      </React.Fragment>
     ))}
+
     {/* </ul> */}
 
     <button type="button" onClick={() => fields.push()}>

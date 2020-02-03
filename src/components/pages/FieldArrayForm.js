@@ -2,7 +2,7 @@ import React from "react";
 import { Field, FieldArray, reduxForm } from "redux-form";
 import validate from "./validate";
 import renderField from "./renderField";
-import FAExample from "./../../styles/FAExample.css";
+import "./../../styles/recipeForm.css";
 // import { Container, Row } from "react-bootstrap";
 
 const FieldArraysForm = props => {
@@ -29,29 +29,26 @@ const renderIngredients = ({
   <>
     {/* <ul id="ingredientAdd"> */}
     {fields.map((ingredient, index) => (
-      <div id="inputFields">
-        {/* {index} */}
-
-        {/* <h4>Ingredient #{index + 1}</h4> */}
-        <p>
-          Add Ingredient:
+      <React.Fragment key={index}>
+        <div id="inputFields">
+          {/* {index} */}
+          {/* <h4>Ingredient #{index + 1}</h4> */}
+          {/* <p>Add Ingredient:</p> */}
           <Field
             name={`${ingredient}`}
             type="text"
             component={renderField}
             placeholder="Ingredient"
-
-            // label="Add Ingredient Here"
+            label={`ingredient ${index + 1}`}
           />
-        </p>
-
-        <button
-          id="removeButton"
-          type="button"
-          title="Remove Ingredient"
-          onClick={() => fields.remove(index)}
-        />
-      </div>
+          <button
+            id="removeButton"
+            type="button"
+            title="Remove Ingredient"
+            onClick={() => fields.remove(index)}
+          />
+        </div>
+      </React.Fragment>
     ))}
     {/* </ul> */}
 
