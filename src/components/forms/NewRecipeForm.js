@@ -8,6 +8,7 @@ import { connect } from "react-redux"; // container connecting react and redux
 import { FieldArray } from "redux-form";
 import FieldArraysForm from "./../pages/FieldArrayForm";
 import "./../../styles/recipeForm.css";
+import KatAppApi from "./../../api/healthyRecipesApp";
 
 class NewRecipeForm extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class NewRecipeForm extends Component {
   onSubmit = () => {
     let data = this.props.form.wizard.values;
     console.log(data);
-    // axios.post('ourUrl')
+    KatAppApi.post("/recipes", { data });
   };
 
   render() {
