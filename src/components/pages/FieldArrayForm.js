@@ -3,7 +3,6 @@ import { Field, FieldArray, reduxForm } from "redux-form";
 import validate from "./validate";
 import renderField from "./renderField";
 import "./../../styles/recipeForm.css";
-// import { Container, Row } from "react-bootstrap";
 
 const FieldArraysForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
@@ -27,13 +26,11 @@ const renderIngredients = ({
   meta: { touched, error, submitFailed }
 }) => (
   <>
-    {/* <ul id="ingredientAdd"> */}
+
     {fields.map((ingredient, index) => (
       <React.Fragment key={index}>
         <div id="inputFields">
-          {/* {index} */}
-          {/* <h4>Ingredient #{index + 1}</h4> */}
-          {/* <p>Add Ingredient:</p> */}
+    
           <Field
             name={`${ingredient}`}
             type="text"

@@ -23,10 +23,12 @@ class NewRecipe extends Component {
     return (
       <>
         <Container id="RecipeList">
+
           <Row id="recipeRowTitle">
             <h1>New Recipe</h1>
           </Row>
           <Row id="recipeRow">
+
             <NewRecipeForm />
             <p>{this.state.form}</p>
           </Row>

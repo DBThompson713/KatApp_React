@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import validate from "./validate";
@@ -7,8 +8,9 @@ import imageUpload from "./../ImageUpload";
 const WizardPageOne = props => {
   const { handleSubmit } = props;
   return (
+
     <div>
-      {/* <h1>WizardPageOne.js</h1> */}
+     
       <form onSubmit={handleSubmit}>
         <Field // holds recipe name
           name="title"
@@ -31,6 +33,7 @@ const WizardPageOne = props => {
         </button>
       </form>
     </div>
+
   );
 };
 
