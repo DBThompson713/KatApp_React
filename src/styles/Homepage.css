@@ -4,6 +4,18 @@
   width: 100vw;
 }
 
+#halfScreenImages {
+  width: 100%;
+  height: 95vh;
+  border-radius: 0 2% 100% 0;
+}
+
+#halfScreenImagesTwo {
+  width: 100%;
+  height: 95vh;
+  border-radius: 100% 0 0 100%;
+}
+
 .col-5 {
   padding: 0;
 }
@@ -14,8 +26,8 @@
 .col {
   padding: 0;
 }
-.row {
-  height: 91vh;
+#homepage .row {
+  height: 95vh;
   width: 100vw;
 }
 
@@ -27,8 +39,8 @@ h1 {
 /* Styling for row 1 */
 
 #row1 img {
-  width: 100%;
-  height: 93vh;
+  /* width: 100%;
+  height: 93vh; */
   opacity: 0.85;
   border-radius: 0 2% 100% 0;
 }
@@ -88,7 +100,14 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  padding: 0 2rem;
+  padding: 13rem 2rem 0 2rem;
+}
+
+#row3 .col-lg-4 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #row3 h1 {
@@ -96,10 +115,11 @@ h1 {
 }
 
 #bioPic {
-  height: 50vh;
-  max-width: 90%;
+  height: auto;
+  max-width: 80%;
   border-radius: 80%;
   margin-left: 10%;
+  padding-top: 50%;
 }
 
 #socialButtons {
@@ -125,6 +145,19 @@ h1 {
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 15%;
+  }
+
+  #Homepage.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    align-items: center;
+  }
+
+  #secondRowImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 0;
   }
 
   #loginButtons .btn {
@@ -165,5 +198,6 @@ h1 {
     height: auto;
     border-radius: 80%;
     margin-left: 1%;
+    padding-top: 80%;
   }
 }

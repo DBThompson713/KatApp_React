@@ -10,7 +10,7 @@ import allRecipeImage from "./../../assets/food1.jpeg";
 import featRecipeImage from "./../../assets/food2.jpeg";
 import { NavLink } from "react-router-dom";
 
-const Dashboard = () => {
+const AdminDashboard = () => {
   const { user } = useAuth0();
   const { loading } = useAuth0();
 
@@ -66,12 +66,20 @@ const Dashboard = () => {
           </Col>
         </Row>
         <Row id="DashboardRow3">
-          <NavLink to="/NewRecipePage">
-            <Button>Add a New Recipe</Button>
-          </NavLink>
+          <Col>
+            <NavLink to="/FlagRecipePage">
+              <Button variant="danger">Flagged Recipes</Button>
+            </NavLink>
+          </Col>
+
+          <Col>
+            <NavLink to="/NewRecipePage">
+              <Button>Add a New Recipe</Button>
+            </NavLink>
+          </Col>
         </Row>
       </div>
     </Fragment>
   );
 };
-export default Dashboard;
+export default AdminDashboard;

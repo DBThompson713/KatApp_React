@@ -6,14 +6,15 @@ import './../styles/RateRecipe.css'
 class RateRecipe extends Component {
     state = { rating: null };
 
-    getRating = async () => {
-        const response = await healthyRecipesApp.get('/recipes/5e29254db1f611a96fe07712/') // stand in till react routes implemented
-            .catch(error => console.log(error));
+    // getRating = async () => {
+    //     const response = await healthyRecipesApp.get('/recipes/5e29254db1f611a96fe07712/') // stand in till react routes implemented
+    //         .catch(error => console.log(error));
 
-            this.setState({ rating: response.data.ratings.length })
-    }
+    //         this.setState({ rating: response.data.ratings.length })
+    // }
 
     // user inputs rating
+
     onClickRateButton = async (event) => {
         const response = await healthyRecipesApp.post('/recipes/5e29254db1f611a96fe07712/5e29060db1f611a96fe07709') // stand in till react routes implemented
             .catch(error => console.log(error));
@@ -23,7 +24,7 @@ class RateRecipe extends Component {
 
     // component did mount makes api call and gets current rating
     componentDidMount() {
-        this.getRating();
+        // this.getRating();
     }
 
     render() {

@@ -1,0 +1,12 @@
+.custom-comment-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -16px;
+    margin-left: -28px;
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 40rem;
+    }
+}

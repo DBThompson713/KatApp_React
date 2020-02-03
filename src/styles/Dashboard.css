@@ -1,4 +1,39 @@
 #dashboard-container {
-  margin-top: 8rem;
+  margin-top: 5rem;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+#dashboard-container .col-12 {
+  flex: 0 0 100%;
+  max-width: auto;
+}
+
+#DashboardRow1 {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+}
+
+#DashboardRow2 {
+  align-items: baseline;
+  margin: 2.5rem auto 2rem auto;
+  display: flex;
+  justify-content: space-around;
+  height: 52vh;
+}
+
+#DashboardRow2 .Card {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+#DashboardRow3 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 20vw;
+  height: 2rem;
+  align-items: center;
+  margin: 0 auto;
 }
