@@ -10,7 +10,13 @@ import "./../../styles/App.css";
 // This page will be where all recipes are shown to the user or admin
 
 class AllRecipes extends Component {
-  state = { recipes: [] };
+  constructor() {
+    super();
+    this.state = {
+      recipes: [],
+      search: ""
+    };
+  }
 
   getRecipes = async () => {
     const response = await healthyRecipesApp
@@ -25,18 +31,36 @@ class AllRecipes extends Component {
     this.getRecipes();
   }
 
-  render() {
-    const { recipes } = this.state;
+  updateSearch(event) {
+    console.log(event.target.value);
+    this.setState({ search: event.target.value });
+  }
 
+  render() {
+    {
+      console.log(this.state.recipes);
+    }
+    const { recipes } = this.state;
+    let filteredRecipes = this.state.recipes.filter(recipe => {
+      return (
+        recipe.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !==
+        -1
+      );
+    });
     return (
-      <>
+      <div>
         <Container id="RecipeList">
           <Row>
             <h1>All Recipes</h1>
+            <input
+              type="text"
+              defaultValue={this.state.search}
+              onChange={this.updateSearch.bind(this)}
+            />
           </Row>
 
           <Row id="recipeShow">
-            {recipes.map(recipe => {
+            {filteredRecipes.map(recipe => {
               return (
                 <Link to={`RecipePage/${recipe._id}`}>
                   <RecipeCard recipe={recipe} key={recipe._id} />
@@ -45,7 +69,7 @@ class AllRecipes extends Component {
             })}
           </Row>
         </Container>
-      </>
+      </div>
     );
   }
 }
