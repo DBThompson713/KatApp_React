@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; // npm package: runtime type checking for React props and similar objects
 // import 3 wizard screens
+import KatAppApi from '../../api/healthyRecipesApp'
 import WizardPageOne from './../pages/WizardPageOne'; // recipe description
 import WizardPageTwo from './../pages/WizardPageTwo'; // recipe ingredients
 import WizardPageThree from './../pages/WizardPageThree'; // recipe steps
@@ -31,7 +32,7 @@ class NewRecipeForm extends Component {
   onSubmit =()=>{
     let data = this.props.form.wizard.values
     console.log(data)
-    // axios.post('ourUrl')
+    KatAppApi.post('/recipes', {data})
   }
 
   render() {
