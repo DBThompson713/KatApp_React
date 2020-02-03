@@ -9,7 +9,7 @@ const FieldArraysForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-      <FieldArray name="Ingredients" component={renderIngredients} />
+      <FieldArray name="ingredients" component={renderIngredients} />
       <div>
         <button type="submit" disabled={submitting}>
           Submit

@@ -7,7 +7,7 @@ const WizardPageThree = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-      <FieldArray name="Steps" component={renderSteps} />
+      <FieldArray name="steps" component={renderSteps} />
       <div>
         <button type="submit" disabled={submitting}>
           Submit
