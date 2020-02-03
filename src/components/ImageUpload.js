@@ -27,7 +27,6 @@ class ImageUpload extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     return <input type="file" onChange={this.upload} />;
   }
 }
