@@ -13,10 +13,10 @@ class NewRecipe extends Component {
   componentDidMount() {
     console.log("component mounted"); // runs when the component runs the first time on the screen "mounts"
 
-    axios
-      .get("url") // where is the data coming from?
-      .then(response => this.setState({ form: response.form.wizard.values }))
-      .catch(error => console.log(error));
+    // axios
+    //   .get("http://localhost:3001/recipes") // where is the data coming from?
+    //   .then(response => this.setState({ form: response.form.wizard.values }))
+    //   .catch(error => console.log(error));
   }
 
   render() {

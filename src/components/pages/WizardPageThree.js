@@ -22,11 +22,9 @@ const WizardPageThree = props => {
 
 const renderSteps = ({ fields, meta: { touched, error, submitFailed } }) => (
   <>
-    {/* <ul id="ingredientAdd"> */}
     {fields.map((step, index) => (
       <React.Fragment key={index}>
         <div id="inputFields">
-          {/* <h4>Ingredient #{index + 1}</h4> */}
           <Field
             name={`${step}`}
             type="text"
@@ -42,8 +40,6 @@ const renderSteps = ({ fields, meta: { touched, error, submitFailed } }) => (
         </div>
       </React.Fragment>
     ))}
-
-    {/* </ul> */}
 
     <button type="button" onClick={() => fields.push()}>
       Add Step
