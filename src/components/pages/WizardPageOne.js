@@ -23,6 +23,25 @@ const WizardPageOne = props => {
           component={renderField}
           label="Enter a short description of your dish"
         />
+
+        <Field // holds recipe description
+          name="prepTime"
+          type="text-area"
+          component={renderField}
+          label="Prep Time"
+        />
+        <Field // holds recipe description
+          name="cookTime"
+          type="text-area"
+          component={renderField}
+          label="Cook Time"
+        />
+        <Field // holds recipe description
+          name="yield"
+          type="text-area"
+          component={renderField}
+          label="Yield"
+        />
         <button // button: next
           type="submit"
           className="next"
