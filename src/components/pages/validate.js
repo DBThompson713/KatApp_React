@@ -1,21 +1,21 @@
 const validate = values => {
-    const errors = {};
-    if (!values.recipeName) {
-      errors.recipeName = 'Required';
-    }
-    if (!values.photoUpload) {
-      errors.photoUpload = 'Required';
-    }
-    if (!values.recipeDescription) {
-      errors.recipeDescription = 'Required';
-    }
-    if (!values.recipeIngredient) {
-      errors.recipeIngredient = 'Required';
-    }
-    if (!values.recipeStep) {
-      errors.recipeStep = 'Required';
-    }
-    return errors;
-  };
-  
-  export default validate;
+  const errors = {};
+  if (!values.title) {
+    errors.title = "Required";
+  }
+  if (!values.image) {
+    errors.image = "Required";
+  }
+  if (!values.description) {
+    errors.description = "Required";
+  }
+  if (!values.ingredients) {
+    errors.ingredients = "Required";
+  }
+  if (!values.steps) {
+    errors.steps = "Required";
+  }
+  return errors;
+};
+
+export default validate;

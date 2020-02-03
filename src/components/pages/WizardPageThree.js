@@ -1,54 +1,60 @@
-import React from 'react';
-import { Field, reduxForm, submit } from 'redux-form';
+import React from "react";
+import { Field, FieldArray, reduxForm, submit } from "redux-form";
 import renderField from "./renderField";
-import validate from './validate';
+import validate from "./validate";
 
 const WizardPageThree = props => {
-  const { handleSubmit, pristine, previousPage, submitting } = props;
+  const { handleSubmit, pristine, reset, submitting } = props;
   return (
+    <form onSubmit={handleSubmit}>
+      <FieldArray name="steps" component={renderSteps} />
       <div>
-          <h1>WizardPageThree.js</h1>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <Field 
-              name="recipeStep" 
-              type="textarea" 
-              component={renderField} 
-              onClick={submit}
-              label="Step 1"
-            />
-            <div>
-              <button 
-                  type="button" 
-                  className="previous" 
-                  onClick={submit}>
-                  Add a Step
-              </button>
-            </div>
-            <div>
-                <button // button: previous
-                  type="button" 
-                  className="previous" 
-                  onClick={previousPage}>
-                  Previous
-                </button>
-                <button // button: submit form
-                  type="submit" 
-                  onClick={submit}
-                  // pristine = form untouched
-                  disabled={pristine || submitting}>
-                  click to submit recipe
-                </button>
-            </div>
-          </div>
-        </form>
-    </div>
+        <button type="submit" disabled={submitting}>
+          Submit
+        </button>
+        <button type="button" disabled={pristine || submitting} onClick={reset}>
+          Clear Values
+        </button>
+      </div>
+    </form>
   );
 };
+
+const renderSteps = ({ fields, meta: { touched, error, submitFailed } }) => (
+  <>
+    {/* <ul id="ingredientAdd"> */}
+    {fields.map((step, index) => (
+      <React.Fragment key={index}>
+        <div id="inputFields">
+          {/* <h4>Ingredient #{index + 1}</h4> */}
+          <Field
+            name={`${step}`}
+            type="text"
+            component={renderField}
+            label={`Step ${index + 1}`}
+          />
+          <button
+            id="removeButton"
+            type="button"
+            title="Remove Step"
+            onClick={() => fields.remove(index)}
+          />
+        </div>
+      </React.Fragment>
+    ))}
+
+    {/* </ul> */}
+
+    <button type="button" onClick={() => fields.push()}>
+      Add Step
+    </button>
+    {(touched || submitFailed) && error && <span>{error}</span>}
+  </>
+);
 
 export default reduxForm({
   form: "wizard",
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-  validate,
+  validate
 })(WizardPageThree);

@@ -36,6 +36,7 @@ function App() {
             path="/FeaturedRecipesPage"
             component={FeaturedRecipes}
           />
+
           <PrivateRoute exact path="/MyAccountPage" component={MyAccount} />
           <Route exact path="/DashboardPage" component={Dashboard} />
           <PrivateRoute exact path="/NewRecipePage" component={NewRecipe} />
