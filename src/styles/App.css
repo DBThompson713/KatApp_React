@@ -17,6 +17,11 @@ h1 {
   }
 }
 
+#recipeShow {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

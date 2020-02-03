@@ -41,7 +41,7 @@ const Dashboard = () => {
             </NavLink>
           </Col>
           <Col xs={12} md={4}>
-            <NavLink to="/AllRecipesPage">
+            <NavLink to="/AllRecipePage">
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={allRecipeImage} />
                 <Card.Body>

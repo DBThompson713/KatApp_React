@@ -13,7 +13,11 @@ class RecipeCard extends Component {
       <>
         <div className="MainCard">
           <Card style={{ width: "18rem" }}>
-            <Card.Img id="mainRecipeImage" variant="top" src={tempImage} />
+            <Card.Img
+              id="mainRecipeImage"
+              variant="top"
+              src={this.props.recipe.image}
+            />
             <Card.Body>
               <Container>
                 <Row>

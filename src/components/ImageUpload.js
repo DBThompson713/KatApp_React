@@ -12,22 +12,22 @@ const config = {
 };
 
 class ImageUpload extends React.Component {
-  upload(event) {
+  upload = event => {
+    const {
+      input: { onChange }
+    } = this.props;
     uploadFile(event.target.files[0], config)
       .then(data => {
         console.log(data.location);
+        onChange(data.location);
       })
       .catch(err => {
         alert(err);
       });
-  }
+  };
+
   render() {
-    return (
-      <>
-        <h3>Image upload test</h3>
-        <input type="file" onChange={this.upload} />
-      </>
-    );
+    return <input type="file" onChange={this.upload} />;
   }
 }
 
