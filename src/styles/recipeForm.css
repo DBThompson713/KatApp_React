@@ -22,6 +22,8 @@
 
 #removeButton {
   background-image: url("https://img.icons8.com/officexs/16/000000/delete-sign.png");
+  background-repeat: no-repeat;
+  /* background-size: 100%; */
 }
 
 #newRecipeForm input {
