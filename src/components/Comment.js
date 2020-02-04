@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, Container, Col, Row, Button } from 'react-bootstrap';
+import { Card, Container, Col, Row } from 'react-bootstrap';
 import './../styles/Comment.css'
 import healthyRecipesApp from './../api/healthyRecipesApp';
 import withAuth0Props from "./withAuth0Props";
-// import { Link } from "react-router-dom";
-// import { useAuth0 } from './../react-auth0-spa';
 
 class Comment extends Component {
     state = { 
@@ -33,9 +31,7 @@ class Comment extends Component {
     };
 
     render() {
-        console.log(this.props);
         let { comments, isAuthenticated } = this.props;
-        // const { isAuthenticated, loginWithRedirect } = useAuth0();
 
         return(
             <>
@@ -56,7 +52,7 @@ class Comment extends Component {
                                                     <Card.Title as="h5">{comment.nickname}</Card.Title>
                                                 </Col>
                                                 <Col xs={6} md={4}>
-                                                    <Card.Title as="h6">{comment.dateOfComment}</Card.Title>
+                                                    <Card.Title as="h6">{comment.dateOfComment.slice(0, 10)}</Card.Title>
                                                 </Col>
                                             </Row>
                                         </Container>
