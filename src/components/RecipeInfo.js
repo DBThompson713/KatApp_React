@@ -45,13 +45,10 @@ class RecipeInfo extends Component {
                             <Row bsPrefix="custom-comment-row">
                                 <Col xs={6}>
                                     {
-                                        recipe.ingredients && recipe.ingredients.map(ingredient => {
-                                            return <Card.Text>{ingredient}</Card.Text>
+                                        recipe.ingredients && recipe.ingredients.map((ingredient, index) => {
+                                            return <Card.Text key={index}>{ingredient}</Card.Text>
                                         })
                                     }
-                                </Col>
-                                <Col xs={6}>
-                                    <Card.Text>1/2 cup orange rind</Card.Text>
                                 </Col>
                             </Row>
                         </Container>

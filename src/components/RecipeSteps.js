@@ -23,9 +23,6 @@ class RecipeSteps extends Component {
                                 </Col>
                             </Row>
                         </Container>
-                        <Card.Text>
-                            1 - Soak 1 rice paper in a shallow dish of water until just soft (about 20 seconds).
-                        </Card.Text>
                         {
                             recipe.steps && recipe.steps.map((step, index) => {
                             return <Card.Text>{index + 1} - {step}</Card.Text>

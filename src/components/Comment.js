@@ -43,16 +43,16 @@ class Comment extends Component {
                         <input type="submit" value="Add" />
                      </form> }
                         {   comments &&
-                            comments.map(comment => {
+                            comments.map((comment, index) => {
                                 return (
                                     <>
                                         <Container>
                                             <Row bsPrefix="custom-comment-row">
                                                 <Col xs={12} md={8}>
-                                                    <Card.Title as="h5">{comment.nickname}</Card.Title>
+                                                    <Card.Title className="Comment-Nickname-Title">{comment.nickname}</Card.Title>
                                                 </Col>
                                                 <Col xs={6} md={4}>
-                                                    <Card.Title as="h6">{comment.dateOfComment.slice(0, 10)}</Card.Title>
+                                                    <Card.Title className="Comment-Date">{comment.dateOfComment.slice(0, 10)}</Card.Title>
                                                 </Col>
                                             </Row>
                                         </Container>
