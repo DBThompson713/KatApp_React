@@ -24,12 +24,12 @@ const Dashboard = () => {
     <Fragment>
       <div id="dashboard-container">
         <Row id="DashboardRow1">
-          <h2>{user.nickname}'s Dashboard</h2>
+          <h1>{user.nickname}'s Dashboard</h1>
         </Row>
         <Row id="DashboardRow2">
-          <Col xs={12} md={4}>
+          <Col>
             <NavLink to="/FavouriteRecipesPage">
-              <Card style={{ width: "17rem" }}>
+              <Card id="dashboardCard" style={{ width: "17rem" }}>
                 <Card.Img variant="top" src={favRecipeImage} />
                 <Card.Body>
                   <Card.Title>Favourite Recipes</Card.Title>
@@ -40,9 +40,9 @@ const Dashboard = () => {
               </Card>
             </NavLink>
           </Col>
-          <Col xs={12} md={4}>
-            <NavLink to="/AllRecipesPage">
-              <Card style={{ width: "18rem" }}>
+          <Col>
+            <NavLink to="/AllRecipePage">
+              <Card id="dashboardCard" style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={allRecipeImage} />
                 <Card.Body>
                   <Card.Title>All Recipes</Card.Title>
@@ -53,9 +53,9 @@ const Dashboard = () => {
               </Card>
             </NavLink>
           </Col>
-          <Col xs={12} md={4}>
+          <Col>
             <NavLink to="/FeaturedRecipesPage">
-              <Card style={{ width: "18rem" }}>
+              <Card id="dashboardCard" style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={featRecipeImage} />
                 <Card.Body>
                   <Card.Title>Featured Recipes</Card.Title>
