@@ -20,8 +20,12 @@ const Discover = () => {
         <div>
           <h4>What is Well Kids?</h4>
           <p>
-          Well Kids is an online community for parents to find, make and add healthy recipes for their children. There are lots of healthy eating options for parents, but not as many as there should be for kids. Because of this, Well Kids makes finding and making healthy recipes easy.
+          Well Kids is an online community for parents to find, make and add healthy recipes for their children. Well Kids rise above nutrition and diet misinformation that with the knowledge, tools and easy, practical recipe ideas to help our kids reach their greatest potential. We provide parents with the opportunity to share, respond, and further empower families to eat a balanced diet of nutrient rich, real food.
           </p>
+        </div>
+        <div>
+          <h4>Who created Well Kids?</h4>
+        <p>Kathryn (Kat) Eccles is a full-time primary school teacher currently completing her Health Science degree. Kat has a passion for kids health and wellness and shares her love of healthy cooking through this online community for parents and children.</p>
         </div>
         <div>
           <h4>What are the benefits of joining the Well Kids community?</h4>
