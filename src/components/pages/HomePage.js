@@ -3,7 +3,7 @@ import "normalize.css";
 import "./.././../styles/Homepage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import kat from "./../../assets/temp_kat.png";
+import kat from "./../../assets/KatBioImage.JPG";
 import tempImage from "./../../assets/rainbow-fruit.png";
 import facebook from "./../../assets/image.png";
 import instagram from "./../../assets/instagram-logo.svg";
@@ -84,7 +84,7 @@ const Homepage = () => {
           </Row>
           <Row id="row3 homePageRow">
             <Col xs={6} lg={4}>
-              <img id="bioPic" src={kat} alt="Kat" />
+              <img id="bioPic" src={kat} alt="Image of website author, Kathryn (nickname: Kat) Eccles" />
             </Col>
 
             {/*  right hand col consists of app name and login page buttons*/}
