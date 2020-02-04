@@ -32,7 +32,7 @@ const renderSteps = ({ fields, meta: { touched, error, submitFailed } }) => (
             label={`Step ${index + 1}`}
           />
           <button
-            id="removeButton"
+            className="removeButton"
             type="button"
             title="Remove Step"
             onClick={() => fields.remove(index)}

@@ -54,7 +54,7 @@ const renderIngredients = ({
             label={`ingredient ${index + 1}`}
           />
           <button
-            id="removeButton"
+            className="removeButton"
             component={DeleteIcon}
             type="button"
             title="Remove Ingredient"
