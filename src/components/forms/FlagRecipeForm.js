@@ -26,7 +26,7 @@ class FlagRecipeForm extends Component {
   render() {
     const { reasonForFlag, additionalInfo, errorMessage } = this.state;
     const { handleSubmit, error, anyTouched } = this.props;
-    const isFlagged = true;
+    this.setState({ isFlagged: true });
 
     return (
       <>
