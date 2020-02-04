@@ -48,6 +48,7 @@ function App() {
             component={AdminDashboard}
           />
           <Route exact path="/RecipePage/:id" component={ViewRecipe} />
+          {/* <PrivateRoute exact path="/RecipePage/:id/comment" component={Comment} /> */}
         </Switch>
       </>
     </BrowserRouter>

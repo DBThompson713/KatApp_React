@@ -5,18 +5,25 @@ import Comment from './../Comment';
 import RecipeSteps from '../RecipeSteps';
 import RecipeInfo from './../RecipeInfo';
 import RecipeImage from '../RecipeImage';
-import healthyRecipesApp from './../../api/healthyRecipesApp';
+import openHealthyRecipesApp from './../../api/openHealthyRecipesApp';
 
 class ViewRecipe extends Component {
     state = { recipe: [] };
 
     getRecipe = async () => {
         let { id } = this.props.match.params;
-        const response = await healthyRecipesApp.get(`/recipes/${id}`)
+        const response = await openHealthyRecipesApp.get(`/recipes/${id}`)
         .catch(error => console.log(error));
-        console.log(response)
     
         this.setState({ recipe: response.data })
+    }
+
+    addComment = (comment) => {
+        this.setState((state) => {
+            let recipe = {...state.recipe, comments: [...state.recipe.comments, comment] };
+
+            return { recipe };
+        })
     }
 
     componentDidMount() {
@@ -24,16 +31,16 @@ class ViewRecipe extends Component {
     }
 
     render() {
-        const { recipe }= this.state;
+        const { recipe } = this.state;
         
         return(
             <>
                 <Container>
                     <Row>
-                        <Col sm={12} xl={6} lg={6}><RecipeImage /></Col>
-                        <Col sm={12} xl={6} lg={6}><RecipeInfo recipe={recipe} {...this.props}/></Col>
-                        <Col sm={12} xl={6} lg={6}><RecipeSteps /></Col>
-                        <Col sm={12} xl={6} lg={6}><Comment /></Col>
+                        <Col sm={12}><RecipeImage /></Col>
+                        <Col sm={12}><RecipeInfo recipe={recipe} {...this.props} /></Col>
+                        <Col sm={12}><RecipeSteps recipe={recipe} {...this.props} /></Col>
+                        <Col sm={12}><Comment comments={recipe.comments} {...this.props} addComment={this.addComment} /></Col>
                     </Row>
                 </Container>
             </>

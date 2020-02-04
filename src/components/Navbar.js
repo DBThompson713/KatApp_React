@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 class NavbarMain extends Component {
   render() {
     return (
-      <Navbar className="navbar" bg="white" expand="lg" fixed="top">
+      <Navbar className="navbar" bg="white" expand="lg">
         <NavLink to="/">
           <img id="logo" src={logo} alt="Logo" />
         </NavLink>
