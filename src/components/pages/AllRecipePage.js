@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "react-bootstrap";
 import "./../../styles/AllRecipeShows.css";
-import healthyRecipesApp from "./../../api/healthyRecipesApp";
+import openHealthyRecipesApp from "./../../api/openHealthyRecipesApp";
 import RecipeCard from "./../RecipeCard";
 import "./../../styles/App.css";
 
@@ -19,12 +19,15 @@ class AllRecipes extends Component {
   }
 
   getRecipes = async () => {
-    const response = await healthyRecipesApp
+    const response = await openHealthyRecipesApp
       .get("/recipes/")
       .catch(error => console.log(error));
     // console.log(response.data); // remove later
 
-    this.setState({ recipes: response.data });
+    if (response) {
+        this.setState({ recipes: response.data });
+    }
+
   };
 
   componentDidMount() {

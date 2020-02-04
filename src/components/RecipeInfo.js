@@ -4,40 +4,36 @@ import { Card, Container, Col, Row } from 'react-bootstrap';
 import unfavouritedIcon from './../assets/unfavourited-icon-50px.png';
 import ShareIcon from './../assets/share-icon-60px.png';
 import RateRecipe from './rateRecipe';
+import './../styles/RecipeInfo.css'
 
 
 class RecipeInfo extends Component {
-    state = { recipe: [] };
+    // state = { recipe: [] };
 
-    setRecipe() {
-        this.setState({ recipe: this.props.recipe });
-    }
-
-    componentDidMount() {
-        this.setRecipe()
-    }
+    // componentDidUpdate() {
+    //     if (this.state.recipe !== this.props.recipe){
+    //         this.setState({ recipe: this.props.recipe }) 
+    //     } 
+    // }
 
     render() {
-        console.log(this.props)
-        console.log(this.state)
+        // let { recipe } = this.state;
         let { recipe } = this.props;
-        console.log(recipe)
+ 
         return(
             <>
-                <Card style={{ margin: '10px' }}>
+                <Card style={{ margin: '10px' }} >
                     <Card.Body>
+                        <Card.Title className="Recipe-Info-Title" >{recipe.title}</Card.Title>
                         <Container>
                             <Row bsPrefix="custom-comment-row">
-                                <Col xs={6} md={3}>
-                                    <Card.Title as="h5">{recipe.title}</Card.Title>
-                                </Col>
-                                <Col xs={6} md={3}>
+                                <Col xs={4} md={4}>
                                     <img src={unfavouritedIcon} alt="empty heart" />
                                 </Col>
-                                <Col xs={6} md={3}>
-                                    <RateRecipe />
+                                <Col xs={4} md={4}>
+                                    <RateRecipe recipe={recipe} {...this.props} />
                                 </Col>
-                                <Col xs={6} md={3}>
+                                <Col xs={4} md={4}>
                                     <img src={ShareIcon} alt="share icon" />
                                 </Col>
                             </Row>
@@ -48,15 +44,11 @@ class RecipeInfo extends Component {
                         <Container>
                             <Row bsPrefix="custom-comment-row">
                                 <Col xs={6}>
-                                    <Card.Text>{}</Card.Text>
-
-                                    {/* {
-                                        recipe.ingredients.map(ingredient => {
+                                    {
+                                        recipe.ingredients && recipe.ingredients.map(ingredient => {
                                             return <Card.Text>{ingredient}</Card.Text>
                                         })
-                                    } */}
-
-
+                                    }
                                 </Col>
                                 <Col xs={6}>
                                     <Card.Text>1/2 cup orange rind</Card.Text>

@@ -9,7 +9,9 @@ import RateRecipe from "./rateRecipe";
 
 class RecipeCard extends Component {
   render() {
-    return (
+      let { recipe } = this.props;
+    
+      return (
       <>
         <div className="MainCard">
           <Card style={{ width: "18rem" }}>
@@ -22,16 +24,15 @@ class RecipeCard extends Component {
               <Container>
                 <Row>
                   <Col xs={9}>
-                    <Card.Title>{this.props.recipe.title}</Card.Title>
+                    <Card.Title>{recipe.title}</Card.Title>
                   </Col>
                   <Col xs={3}>
                     <img src={unfavouritedIcon} alt="empty heart" />
                   </Col>
                 </Row>
               </Container>
-              <Card.Text>{this.props.recipe.description}</Card.Text>
-              <RateRecipe />
-              <Card.Text></Card.Text>
+              <Card.Text>{recipe.description}</Card.Text>
+
             </Card.Body>
           </Card>
         </div>

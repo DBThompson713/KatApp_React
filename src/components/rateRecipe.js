@@ -7,17 +7,19 @@ class RateRecipe extends Component {
     state = { rating: null };
 
     // getRating = async () => {
-    //     const response = await healthyRecipesApp.get('/recipes/5e29254db1f611a96fe07712/') // stand in till react routes implemented
+    //     let { id } = this.props.match.params;
+    //     const response = await healthyRecipesApp.get(`/recipes/${id}`)
     //         .catch(error => console.log(error));
 
-    //         this.setState({ rating: response.data.ratings.length })
+    //     this.setState({ rating: response.data.ratings.length })
     // }
 
-    // user inputs rating
-
     onClickRateButton = async (event) => {
-        const response = await healthyRecipesApp.post('/recipes/5e29254db1f611a96fe07712/5e29060db1f611a96fe07709') // stand in till react routes implemented
+        let { id } = this.props.match.params;
+        console.log(id)
+        const response = await healthyRecipesApp.post(`/recipes/${id}`)
             .catch(error => console.log(error));
+        console.log(response)
 
         this.setState({ rating: response.data })
     }
@@ -29,11 +31,12 @@ class RateRecipe extends Component {
 
     render() {
         const { rating } = this.state;
+        console.log(this.props)
 
         return(
             <div className='Rate-Recipe-Container'>
                 <img src={rateRecipeIcon} alt='carrot with rating ticker' onClick={this.onClickRateButton} />
-                <div className='Rate-Recipe-Ticker' onClick={this.onClickRateButton}>{rating}</div>
+                <div className='Rate-Recipe-Ticker' onClick={this.onClickRateButton}>{this.props.rating && rating}</div>
             </div>
         );
     }
