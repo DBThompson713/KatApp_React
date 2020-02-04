@@ -36,6 +36,8 @@ class NewRecipeForm extends Component {
     let data = this.props.form.wizard.values;
     // console.log(data);
     KatAppApi.post("/recipes", { data });
+    const { resetForm } = this.props;
+    resetForm();
   };
 
   render() {

@@ -2,7 +2,7 @@ import React from "react";
 
 // check parenthese
 
-const renderField = ({ input, label, type, meta: { touched, error } }) => (
+const renderField = ({ input, label, type, placeholder, meta: { touched, error } }) => (
   <div>
     <label>
       {label}
@@ -10,7 +10,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div>
       <input
         {...input}
-        placeholder={label}
+        placeholder={placeholder}
         type={type}
       />
       {touched && error && <span>{error}</span>}

@@ -20,6 +20,10 @@
   margin: 20vh auto;
 }
 
+#removeButton {
+  background-image: url("https://img.icons8.com/officexs/16/000000/delete-sign.png");
+}
+
 #newRecipeForm input {
   width: 20rem;
 }
@@ -88,3 +92,4 @@ li {
 #recipeRow input {
   max-width: 70%;
 }
+

@@ -3,18 +3,30 @@ import { Field, FieldArray, reduxForm } from "redux-form";
 import validate from "./validate";
 import renderField from "./renderField";
 import "./../../styles/recipeForm.css";
+import DeleteIcon from "./DeleteIcon";
 // import { Container, Row } from "react-bootstrap";
 
 const FieldArraysForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-      <FieldArray name="ingredients" component={renderIngredients} />
+      <FieldArray 
+        name="ingredients" 
+        type="text"
+        component={renderIngredients}
+      />
       <div>
-        <button type="submit" disabled={submitting}>
+        <button
+          className="next"
+          type="submit" 
+          disabled={submitting}>
           Submit
         </button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
+        <button
+          className="next"
+          type="button"
+          disabled={pristine || submitting}
+          onClick={reset}>
           Clear Values
         </button>
       </div>
@@ -38,11 +50,12 @@ const renderIngredients = ({
             name={`${ingredient}`}
             type="text"
             component={renderField}
-            placeholder="Ingredient"
+            placeholder="Add ingredients 1-by-1"
             label={`ingredient ${index + 1}`}
           />
           <button
             id="removeButton"
+            component={DeleteIcon}
             type="button"
             title="Remove Ingredient"
             onClick={() => fields.remove(index)}
@@ -52,7 +65,11 @@ const renderIngredients = ({
     ))}
     {/* </ul> */}
 
-    <button type="button" onClick={() => fields.push()}>
+    <button
+      className="next"
+      type="button"
+      placeholder="Add ingredients 1-by-1"
+      onClick={() => fields.push()}>
       Add Ingredient
     </button>
     {(touched || submitFailed) && error && <span>{error}</span>}
