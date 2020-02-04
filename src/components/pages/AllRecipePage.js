@@ -53,7 +53,7 @@ class AllRecipes extends Component {
               type="text"
               defaultValue={this.state.search}
               onChange={this.updateSearch.bind(this)}
-              placeholder="Search Recipes"
+              placeholder="Search"
             />
           </Row>
 
