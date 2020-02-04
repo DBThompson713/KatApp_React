@@ -3,7 +3,7 @@ import "normalize.css";
 import "./.././../styles/Homepage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import kat from "./../../assets/temp_kat.png";
+import kat from "./../../assets/KatBioImage.JPG";
 import tempImage from "./../../assets/rainbow-fruit.png";
 import facebook from "./../../assets/image.png";
 import instagram from "./../../assets/instagram-logo.svg";
@@ -84,7 +84,7 @@ const Homepage = () => {
           </Row>
           <Row id="row3 homePageRow">
             <Col xs={6} lg={4}>
-              <img id="bioPic" src={kat} alt="Kat" />
+              <img id="bioPic" src={kat} alt="Image of website author, Kathryn (nickname: Kat) Eccles" />
             </Col>
 
             {/*  right hand col consists of app name and login page buttons*/}
@@ -92,17 +92,13 @@ const Homepage = () => {
               <div id="bio">
                 <h1>Hi I'm Kat.</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, dhjhe
-                  aliqua. Ut enim ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat.
+                I am a full-time primary school teacher currently completing my Health Science degree with a passion for kids health and wellness.
                 </p>
                 <p>
-                  Duis aute irure dolor in reprehenderit. Excepteur deserunt
-                  mollit anim id est laborum.
+                After almost a decade of teaching, I understand it is essential for kids to lead a happy, healthy life inside and outside the classroom.
                 </p>
                 <p>
-                  sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua.
+                Through Well Kids, I’ve made it my mission to help families work together to ensure kids are eating a balanced diet of nutrient rich, real food.
                 </p>
               </div>
               <div id="socialButtons">
