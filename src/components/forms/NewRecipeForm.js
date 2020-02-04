@@ -35,7 +35,7 @@ class NewRecipeForm extends Component {
   onSubmit = () => {
     let data = this.props.form.wizard.values;
     // console.log(data);
-    KatAppApi.post("/recipes", { data });
+    KatAppApi.post("/recipes", data);
   };
 
   render() {

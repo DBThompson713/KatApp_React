@@ -25,9 +25,8 @@ class AllRecipes extends Component {
     // console.log(response.data); // remove later
 
     if (response) {
-        this.setState({ recipes: response.data });
+      this.setState({ recipes: response.data });
     }
-
   };
 
   componentDidMount() {
@@ -63,7 +62,7 @@ class AllRecipes extends Component {
           <Row id="recipeShow">
             {filteredRecipes.map(recipe => {
               return (
-                <Link to={`RecipePage/${recipe._id}`}>
+                <Link to={`RecipePage/${recipe._id}`} key={recipe._id}>
                   <RecipeCard recipe={recipe} key={recipe._id} />
                 </Link>
               );
