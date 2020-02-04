@@ -37,9 +37,6 @@ class AllRecipes extends Component {
   }
 
   render() {
-    {
-      console.log(this.state.recipes);
-    }
     const { recipes } = this.state;
     let filteredRecipes = this.state.recipes.filter(recipe => {
       return (
@@ -50,12 +47,13 @@ class AllRecipes extends Component {
     return (
       <div>
         <Container id="RecipeList">
-          <Row>
+          <Row id="allRecipeTop">
             <h1>All Recipes</h1>
             <input
               type="text"
               defaultValue={this.state.search}
               onChange={this.updateSearch.bind(this)}
+              placeholder="Search Recipes"
             />
           </Row>
 

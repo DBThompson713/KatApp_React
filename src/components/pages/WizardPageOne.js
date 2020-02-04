@@ -28,13 +28,13 @@ const WizardPageOne = props => {
           name="prepTime"
           type="text-area"
           component={renderField}
-          label="Prep Time"
+          label="Prep Time in Minutes"
         />
         <Field // holds recipe description
           name="cookTime"
           type="text-area"
           component={renderField}
-          label="Cook Time"
+          label="Cook Time in Minutes"
         />
         <Field // holds recipe description
           name="yield"

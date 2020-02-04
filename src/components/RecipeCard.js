@@ -30,9 +30,8 @@ class RecipeCard extends Component {
                 </Row>
               </Container>
               <Card.Text>{this.props.recipe.description}</Card.Text>
-              <Card.Text>
-                <RateRecipe />
-              </Card.Text>
+              <RateRecipe />
+              <Card.Text></Card.Text>
             </Card.Body>
           </Card>
         </div>
