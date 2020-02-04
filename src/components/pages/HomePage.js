@@ -92,17 +92,13 @@ const Homepage = () => {
               <div id="bio">
                 <h1>Hi I'm Kat.</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, dhjhe
-                  aliqua. Ut enim ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat.
+                I am a full-time primary school teacher currently completing my Health Science degree with a passion for kids health and wellness.
                 </p>
                 <p>
-                  Duis aute irure dolor in reprehenderit. Excepteur deserunt
-                  mollit anim id est laborum.
+                After almost a decade of teaching, I understand it is essential for kids to lead a happy, healthy life inside and outside the classroom.
                 </p>
                 <p>
-                  sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua.
+                Through Well Kids, I’ve made it my mission to help families work together to ensure kids are eating a balanced diet of nutrient rich, real food.
                 </p>
               </div>
               <div id="socialButtons">
