@@ -11,8 +11,10 @@ class FlaggedRecipesIndexPage extends Component {
     getFlaggedRecipes = async () => {
         const response = await openHealthyRecipesApp.get('/recipes/flaggedrecipes')
         .catch(error => console.log(error));
-
-        this.setState({ flaggedRecipes: response.data })
+        
+        if (response) {
+            this.setState({ flaggedRecipes: response.data });
+        }
     }
 
     componentDidMount() {
