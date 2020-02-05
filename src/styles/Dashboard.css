@@ -45,8 +45,8 @@
   justify-content: space-around;
   /* height: 52vh; */
   align-items: center;
-  margin-top: 2rem;
-  margin-right: auto;
+  /* margin-top: 2rem; */
+  margin: 2rem auto;
   padding: 0 auto;
 }
 
@@ -76,7 +76,7 @@
   align-self: center;
   justify-self: center;
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 950px) {
   #dashboardCard {
     margin: 1rem 18vw;
   }
