@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Container, Col, Row } from "react-bootstrap";
 import unfavouritedIcon from "./../assets/unfavourited-icon-50px.png";
-import ShareIcon from "./../assets/share-icon-60px.png";
+import FlagIcon from "./../assets/flag_icon.png";
 import RateRecipe from "./rateRecipe";
 import "./../styles/RecipeInfo.css";
+import { Link } from "react-router-dom";
 
 class RecipeInfo extends Component {
   // state = { recipe: [] };
@@ -35,7 +36,9 @@ class RecipeInfo extends Component {
                   <RateRecipe recipe={recipe} {...this.props} />
                 </Col>
                 <Col xs={4} md={4}>
-                  <img src={ShareIcon} alt="share icon" />
+                  <Link to={`/FlagRecipePage/${recipe._id}`}>
+                    <img src={FlagIcon} alt="flag icon" {...this.props} />
+                  </Link>
                 </Col>
               </Row>
             </Container>
