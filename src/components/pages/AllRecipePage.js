@@ -63,7 +63,7 @@ class AllRecipes extends Component {
             {filteredRecipes.map(recipe => {
               return (
                 <Link to={`RecipePage/${recipe._id}`} key={recipe._id}>
-                  <RecipeCard recipe={recipe} key={recipe._id} />
+                  <RecipeCard recipe={recipe} />
                 </Link>
               );
             })}
