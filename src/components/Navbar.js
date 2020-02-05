@@ -8,39 +8,47 @@ import "./../styles/Navbar.css";
 import { NavLink } from "react-router-dom";
 
 class NavbarMain extends Component {
+  state = { expanded: false }
+  
+  toggleExpand = () => {
+    this.setState((state) => {
+      return { expanded: !state.expanded };
+    })
+  }
+
   render() {
     return (
-      <Navbar className="navbar" bg="white" expand="lg">
+      <Navbar expanded={this.state.expanded} className="navbar" bg="white" expand="lg" fixed="top">
         <NavLink to="/">
           <img id="logo" src={logo} alt="Logo" />
         </NavLink>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={this.toggleExpand} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavLink className="navitem m-3 d-flex" to="/DashboardPage">
+            <NavLink className="navitem m-3 d-flex" to="/DashboardPage" onClick={this.toggleExpand}>
               Home
             </NavLink>
-            <NavLink className="navitem m-3 d-flex" to="/NewRecipePage">
+            <NavLink className="navitem m-3 d-flex" to="/NewRecipePage" onClick={this.toggleExpand}>
               New Recipe
             </NavLink>
-            <NavLink className="navitem m-3 d-flex" to="/AllRecipePage">
+            <NavLink className="navitem m-3 d-flex" to="/AllRecipePage" onClick={this.toggleExpand}>
               All Recipes
             </NavLink>
-            <NavLink className="navitem m-3 d-flex" to="/FeaturedRecipesPage">
+            <NavLink className="navitem m-3 d-flex" to="/FeaturedRecipesPage" onClick={this.toggleExpand}>
               Featured Recipes
             </NavLink>
 
-            <NavLink className="navitem m-3 d-flex" to="/DiscoverPage">
+            <NavLink className="navitem m-3 d-flex" to="/DiscoverPage" onClick={this.toggleExpand}>
               Discover
             </NavLink>
 
-            <NavLink className="m-3 d-flex" to="/KidsCornerPage">
+            <NavLink className="m-3 d-flex" to="/KidsCornerPage" onClick={this.toggleExpand}>
               Kids Corner
             </NavLink>
           </Nav>
           <Nav className="mr-sm-2">
             <div id="myAccountLink">
-              <NavLink to="/MyAccountPage">
+              <NavLink to="/MyAccountPage" onClick={this.toggleExpand}>
                 <img
                   id="myAccount"
                   src={myAccount}

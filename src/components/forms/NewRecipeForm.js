@@ -23,12 +23,12 @@ class NewRecipeForm extends Component {
   }
 
   nextPage() {
-    this.setState({ page: this.state.page + 1 }); // navigates forwards one page
+    this.setState((state) => { return { page: state.page + 1 }}); // navigates forwards one page
     console.log("next page");
   }
 
   previousPage() {
-    this.setState({ page: this.state.page - 1 }); // navigates backwards one page
+    this.setState((state) => { return {page: state.page - 1 }}); // navigates backwards one page
     console.log("previous page");
   }
 

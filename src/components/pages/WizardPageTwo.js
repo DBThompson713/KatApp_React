@@ -16,14 +16,11 @@ const WizardPageTwo = props => {
             label="Ingredient + amount" 
           />
             <div>
-              <button // button: add another recipe ingredient
-                type="button" 
-                className="previous"
-                /*onClick={() => fields.push({})}*/>
-                Add another recipe ingredient
+              <button 
+                type="submit" 
+                className="next">
+                Next page
               </button>
-              <button type="button" className="previous" onClick={previousPage}>Previous page</button>
-              <button type="submit" className="next">Next page</button>
             </div>
         </form>
     </div>
