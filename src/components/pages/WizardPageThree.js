@@ -2,6 +2,8 @@ import React from "react";
 import { Field, FieldArray, reduxForm, submit } from "redux-form";
 import renderField from "./renderField";
 import validate from "./validate";
+import DeleteIcon from "./DeleteIcon";
+import AddIcon from "./AddIcon";
 
 const WizardPageThree = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
@@ -34,15 +36,17 @@ const renderSteps = ({ fields, meta: { touched, error, submitFailed } }) => (
           <button
             className="removeButton"
             type="button"
-            title="Remove Step"
+            component={DeleteIcon}
             onClick={() => fields.remove(index)}
           />
         </div>
       </React.Fragment>
     ))}
 
-    <button type="button" onClick={() => fields.push()}>
-      Add Step
+    <button 
+      type="button"
+      component={AddIcon}
+      onClick={() => fields.push()}>
     </button>
     {(touched || submitFailed) && error && <span>{error}</span>}
   </>

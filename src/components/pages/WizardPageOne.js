@@ -19,22 +19,21 @@ const WizardPageOne = props => {
           label="Recipe Title"
           placeholder="Add your recipe name"
         />
-        <p>Recipe Image</p>
-
-        {/* image preview area for class component <img src={this.state.imagePreview} /> */}
-
         <Field // holds image
+          label="Recipe Image"
           name="image"
           type="file"
           component={imageUpload}
         />
-        <Field // holds recipe description
-          name="description"
-          type="text"
-          component="textarea"
-          label="Recipe Description"
-          placeholder="Enter a short description of your dish"
-        />
+        <div>
+          <Field // holds recipe description
+            name="description"
+            type="text"
+            component="textarea"
+            label="Recipe Description"
+            placeholder="Enter a short description of your dish"
+          />
+        </div>
         <Field // preparation time
           name="prepTime"
           type="text"
@@ -58,8 +57,7 @@ const WizardPageOne = props => {
         />
         <button // button: next
           type="submit"
-          className="next"
-        >
+          className="nextButton">
           Next Page
         </button>
       </form>
