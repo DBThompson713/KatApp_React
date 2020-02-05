@@ -17,29 +17,31 @@ const FieldArraysForm = props => {
         type="text"
         component={renderIngredients}
       />
+      <div className="flexRow">
         <div>
           <button // previous button
             type="submit"
             className="previousButton">
-            Previous Page
+            Previous page
           </button>
         </div>
         <div>
-          <button // next button: acts as submit
-            className="nextButton"
-            type="submit"
-            disabled={submitting}>
-            Next page
-          </button>
-          </div>
-          <div>
           <button // clear all input button
-            className="nextButton"
+            className="previousButton"
             type="button"
             disabled={pristine || submitting}
             onClick={reset}>
             Clear all input
           </button>
+        </div>
+        <div>
+          <button // next button: acts as submit
+            className="previousButton"
+            type="submit"
+            disabled={submitting}>
+            Next page >
+          </button>
+          </div>
         </div>
       </section>
     </form>
@@ -66,7 +68,6 @@ const renderIngredients = ({
             className="removeButton"
             component={DeleteIcon}
             type="button"
-            // title="Remove Ingredient"
             onClick={() => fields.remove(index)}
           />
         </div>
