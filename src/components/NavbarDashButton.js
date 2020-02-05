@@ -34,7 +34,7 @@ class NavbarDashButton extends Component {
             return(
                 <Nav className="mr-sm-2">
                     <div id="myAccountLink">
-                    <NavLink to="/DashboardPage">
+                    <NavLink to="/AdminDashboardPage">
                         <img
                         id="myAccount"
                         src={myAccount}
