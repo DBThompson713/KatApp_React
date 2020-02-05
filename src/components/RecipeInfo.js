@@ -37,7 +37,12 @@ class RecipeInfo extends Component {
                 </Col>
                 <Col xs={4} md={4}>
                   <Link to={`/FlagRecipePage/${recipe._id}`}>
-                    <img src={FlagIcon} alt="flag icon" {...this.props} />
+                    <img
+                      id="flagIcon"
+                      src={FlagIcon}
+                      alt="flag icon"
+                      {...this.props}
+                    />
                   </Link>
                 </Col>
               </Row>

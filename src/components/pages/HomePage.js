@@ -32,7 +32,7 @@ const Homepage = () => {
             {/*  right hand col consists of app name and login page buttons*/}
             <Col id="rightTop" xs={7}>
               <h1>Well Kids</h1>
-              <p>Well as in healthy - not a hole in the ground.</p>
+              <p>Healthy and delicious recipes for kids</p>
               <div id="loginButtons">
                 <div>
                   {!isAuthenticated && (
@@ -54,7 +54,7 @@ const Homepage = () => {
           </Row>
 
           <Row id="row2 homePageRow">
-            <Col xs={8}>
+            <Col xs={12} lg={8}>
               <div id="headline">
                 <h6>How does Sugar affect kids with ADHD?</h6>
                 <h6>Why is "Eat The Rainbow"?</h6>
@@ -74,7 +74,7 @@ const Homepage = () => {
             </Col>
 
             {/*  right hand col consists of app name and login page buttons*/}
-            <Col xs={4} id="secondRowImage">
+            <Col xs={0} lg={4} id="secondRowImage">
               <img
                 id="halfScreenImagesTwo"
                 src={tempImage}
@@ -82,23 +82,41 @@ const Homepage = () => {
               />
             </Col>
           </Row>
-          <Row id="row3 homePageRow">
-            <Col xs={6} lg={4}>
-              <img id="bioPic" src={kat} alt="Image of website author, Kathryn (nickname: Kat) Eccles" />
+          <Row id="row3 homePageRow ">
+            <Col xs={0} lg={4} id="row3none">
+              <img
+                id="bioPic"
+                src={kat}
+                alt="Image of website author, Kathryn (nickname: Kat) Eccles"
+              />
             </Col>
 
             {/*  right hand col consists of app name and login page buttons*/}
-            <Col xs={6} lg={8}>
+            <Col xs={12} lg={8} id="bioContainer">
               <div id="bio">
-                <h1>Hi I'm Kat.</h1>
+                <div id="bioMobileTop">
+                  <img
+                    id="bioPicMobile"
+                    src={kat}
+                    alt="Image of website author, Kathryn (nickname: Kat) Eccles"
+                  />
+                  <h1>Hi I'm Kat.</h1>
+                </div>
+
                 <p>
-                I am a full-time primary school teacher currently completing my Health Science degree with a passion for kids health and wellness.
+                  I am a full-time primary school teacher currently completing
+                  my Health Science degree with a passion for kids health and
+                  wellness.
                 </p>
                 <p>
-                After almost a decade of teaching, I understand it is essential for kids to lead a happy, healthy life inside and outside the classroom.
+                  After almost a decade of teaching, I understand it is
+                  essential for kids to lead a happy, healthy life inside and
+                  outside the classroom.
                 </p>
                 <p>
-                Through Well Kids, I’ve made it my mission to help families work together to ensure kids are eating a balanced diet of nutrient rich, real food.
+                  Through Well Kids, I’ve made it my mission to help families
+                  work together to ensure kids are eating a balanced diet of
+                  nutrient rich, real food.
                 </p>
               </div>
               <div id="socialButtons">

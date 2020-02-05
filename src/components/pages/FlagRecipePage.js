@@ -10,9 +10,9 @@ class FlagRecipes extends Component {
   render() {
     return (
       <>
-        <Container id="RecipeList">
-          <Row id="row1">
-            {/* <h1>Flag Recipes</h1> */}
+        <Container id="flagRecipePage">
+          <h2>Flag Recipe</h2>
+          <Row id="row1Flag">
             <FlagRecipeForm {...this.props} />
           </Row>
         </Container>
