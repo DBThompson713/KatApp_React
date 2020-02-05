@@ -1,19 +1,20 @@
 #dashboard-container {
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 40px;
 }
 
-#dashboard-container Row {
+/* #dashboard-container Row {
   margin-top: 5rem;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-}
+} */
 
 #dashboard-container .col-12 {
   flex: 0 0 100%;
@@ -34,7 +35,7 @@
 #DashboardRow1 {
   display: flex;
   justify-content: center;
-  height: 10vh;
+  /* height: 10vh; */
 }
 
 #DashboardRow2 {
@@ -43,6 +44,14 @@
   display: flex;
   justify-content: space-evenly;
   height: 52vh;
+}
+
+#DashboardCardCol1 {
+    margin-right: 20px;
+}
+
+#DashboardCardCol2 {
+    margin-right: 20px;
 }
 
 #DashboardRow2 .Card {

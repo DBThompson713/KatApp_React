@@ -6,6 +6,7 @@ import logo from "./../assets/rainbow-mini.jpg";
 import myAccount from "./../assets/my_account.png";
 import "./../styles/Navbar.css";
 import { NavLink } from "react-router-dom";
+import NavbarDashButton from './NavbarDashButton';
 
 class NavbarMain extends Component {
   render() {
@@ -38,19 +39,7 @@ class NavbarMain extends Component {
               Kids Corner
             </NavLink>
           </Nav>
-          <Nav className="mr-sm-2">
-            <div id="myAccountLink">
-              <NavLink to="/MyAccountPage">
-                <img
-                  id="myAccount"
-                  src={myAccount}
-                  alt="My Account"
-                  to="/MyAccountPage"
-                />
-                My Account
-              </NavLink>
-            </div>
-          </Nav>
+          <NavbarDashButton />
         </Navbar.Collapse>
       </Navbar>
     );
