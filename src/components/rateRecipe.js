@@ -1,42 +1,49 @@
 import React, { Component } from 'react';
+import withAuth0Props from "./withAuth0Props";
 import rateRecipeIcon from './../assets/rateRecipeIcon40px.png'
 import healthyRecipesApp from '../api/healthyRecipesApp';
+import openHealthyRecipesApp from '../api/openHealthyRecipesApp';
 import './../styles/RateRecipe.css'
 
 class RateRecipe extends Component {
     state = { rating: null };
 
-    // getRating = async () => {
-    //     const response = await healthyRecipesApp.get('/recipes/5e29254db1f611a96fe07712/') // stand in till react routes implemented
-    //         .catch(error => console.log(error));
+    getRating = async () => {
+        let { id } = this.props.match.params;
+        const response = await openHealthyRecipesApp.get(`/recipes/${id}`)
+            .catch(error => console.log(error));
 
-    //         this.setState({ rating: response.data.ratings.length })
-    // }
-
-    // user inputs rating
+        this.setState({ rating: response.data.ratings.length })
+    }
 
     onClickRateButton = async (event) => {
-        const response = await healthyRecipesApp.post('/recipes/5e29254db1f611a96fe07712/5e29060db1f611a96fe07709') // stand in till react routes implemented
+        let { id } = this.props.match.params;
+        const response = await healthyRecipesApp.post(`/recipes/${id}`)
             .catch(error => console.log(error));
+        console.log(response)
 
         this.setState({ rating: response.data })
     }
 
     // component did mount makes api call and gets current rating
     componentDidMount() {
-        // this.getRating();
+        this.getRating();
     }
 
     render() {
-        const { rating } = this.state;
+        let { rating } = this.state;
+        let { isAuthenticated } = this.props;
 
         return(
             <div className='Rate-Recipe-Container'>
-                <img src={rateRecipeIcon} alt='carrot with rating ticker' onClick={this.onClickRateButton} />
-                <div className='Rate-Recipe-Ticker' onClick={this.onClickRateButton}>{rating}</div>
+                { isAuthenticated &&  <>
+                    <img src={rateRecipeIcon} alt='carrot with rating ticker' onClick={this.onClickRateButton} />
+                    <div className='Rate-Recipe-Ticker' onClick={this.onClickRateButton}>{rating}</div> </>
+                }
             </div>
         );
     }
 }
 
-export default RateRecipe;
+export default withAuth0Props(RateRecipe);
+// export default RateRecipe;

@@ -13,11 +13,9 @@ import Dashboard from "./components/pages/DashboardPage";
 import NewRecipe from "./components/pages/NewRecipePage";
 import { useAuth0 } from "./react-auth0-spa";
 import PrivateRoute from "./components/PrivateRoute";
-import { Provider } from "react-redux";
 import AdminDashboard from "./components/pages/AdminDashboardPage";
 import ExternalApi from "./views/ExternalApi";
 import ViewRecipe from "./components/pages/RecipePage";
-
 
 function App() {
   const { loading } = useAuth0();
@@ -51,6 +49,7 @@ function App() {
             component={AdminDashboard}
           />
           <Route exact path="/RecipePage/:id" component={ViewRecipe} />
+          {/* <PrivateRoute exact path="/RecipePage/:id/comment" component={Comment} /> */}
         </Switch>
       </>
     </BrowserRouter>

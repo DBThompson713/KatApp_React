@@ -1,8 +1,17 @@
 .custom-comment-row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -16px;
-    margin-left: -28px;
+    text-align: center;
+    align-items: center;
+}
+
+.Comment-Nickname-Title {
+    font-size: 20px;
+    text-align: left;
+}
+
+.Comment-Date {
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {

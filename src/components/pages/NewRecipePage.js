@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "react-bootstrap";
 import "./../../styles/AllRecipeShows.css";
 import NewRecipeForm from "./../forms/NewRecipeForm";
-import axios from "axios";
+// import axios from "axios";
 
 // This page will be where all recipes are shown to the user or admin
 
