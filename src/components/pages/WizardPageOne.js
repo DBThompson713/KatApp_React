@@ -65,7 +65,7 @@ const WizardPageOne = props => {
           </button>
           </div>
           <div>
-          <button // previous button
+          <button // next button
             className="previousButton">
             Next
           </button>

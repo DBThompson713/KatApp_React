@@ -1,5 +1,6 @@
 import React from "react";
 import { Field, FieldArray, reduxForm, submit } from "redux-form";
+import { Link } from "react-router-dom"; // for the link to
 import renderField from "./renderField";
 import validate from "./validate";
 import DeleteIcon from "./DeleteIcon";
@@ -13,7 +14,7 @@ const WizardPageThree = props => {
       <div className="flexRow">
       <div>
         <button // previous button
-          type="submit"
+          type={submit}
           className="previousButton">
           Previous
         </button>

@@ -8,7 +8,7 @@ import AddIcon from "./AddIcon";
 // import { Container, Row } from "react-bootstrap";
 
 const FieldArraysForm = props => {
-  const { handleSubmit, pristine, reset, submitting, previousPage } = props;
+  const { handleSubmit, pristine, reset, submit, submitting, previousPage } = props;
   return (
     <form onSubmit={handleSubmit}>
       <section>
@@ -20,6 +20,7 @@ const FieldArraysForm = props => {
       <div className="flexRow">
         <div>
           <button // previous button
+            type={submit}
             onClick={previousPage}
             className="previousButton">
             Previous
@@ -53,7 +54,6 @@ const renderIngredients = ({
   meta: { touched, error, submitFailed }
 }) => (
   <>
-    {/* <ul id="ingredientAdd"> */}
     {fields.map((ingredient, index) => (
       <React.Fragment key={index}>
         <div className="inputFields flexRow">
