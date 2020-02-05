@@ -3,7 +3,7 @@ import "normalize.css";
 import "./.././../styles/Homepage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import kat from "./../../assets/KatBioImage.JPG";
+import kat from "./../../assets/KatBioImage_Test.JPG";
 import tempImage from "./../../assets/rainbow-fruit.png";
 import facebook from "./../../assets/image.png";
 import instagram from "./../../assets/instagram-logo.svg";
@@ -19,7 +19,7 @@ const Homepage = () => {
   return (
     <>
       {
-        <Container id="homepage">
+        <Container id="homepage" className="home-page-container">
           <Row id="row1 homePageRow">
             <Col xs={5}>
               <img
@@ -102,10 +102,10 @@ const Homepage = () => {
                 </p>
               </div>
               <div id="socialButtons">
-                <button>
+                <button className="home-page-button">
                   <img src={instagram} alt="instagram" />
                 </button>
-                <button>
+                <button className="home-page-button">
                   <img src={facebook} alt="facebook" />
                 </button>
               </div>
