@@ -12,6 +12,7 @@ class FeaturedRecipes extends Component {
         <Container id="RecipeList">
           <Row id="row1">
             <h1>Featured Recipes</h1>
+            <h4>Coming Soon!</h4>
           </Row>
         </Container>
       </>

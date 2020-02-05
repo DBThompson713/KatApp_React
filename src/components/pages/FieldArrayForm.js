@@ -59,7 +59,7 @@ const renderIngredients = ({
     {/* <ul id="ingredientAdd"> */}
     {fields.map((ingredient, index) => (
       <React.Fragment key={index}>
-        <div className="inputFields flexRow">
+        <div className="inputFields flexRow ingredientAndRemove">
           <Field
             name={`${ingredient}`}
             type="text"

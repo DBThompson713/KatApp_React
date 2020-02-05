@@ -58,4 +58,7 @@ a {
   #myAccountLink {
     margin: 1rem auto;
   }
+  .navbarFix {
+    margin-top: -0.65rem !important;
+  }
 }

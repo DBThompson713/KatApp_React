@@ -6,7 +6,7 @@ import logo from "./../assets/rainbow-mini.jpg";
 import myAccount from "./../assets/my_account.png";
 import "./../styles/Navbar.css";
 import { NavLink } from "react-router-dom";
-import NavbarDashButton from './NavbarDashButton';
+import NavbarDashButton from "./NavbarDashButton";
 
 class NavbarMain extends Component {
   state = { expanded: false };
@@ -65,7 +65,7 @@ class NavbarMain extends Component {
             </NavLink>
             ​
             <NavLink
-              className="navitem m-3 d-flex"
+              className="navitem m-3 d-flex navbarFix"
               to="/DiscoverPage"
               onClick={this.toggleExpand}
             >
@@ -73,14 +73,17 @@ class NavbarMain extends Component {
             </NavLink>
             ​
             <NavLink
-              className="m-3 d-flex"
+              className="m-3 d-flex navbarFix"
               to="/KidsCornerPage"
               onClick={this.toggleExpand}
             >
               Kids Corner
             </NavLink>
           </Nav>
-          <NavbarDashButton />
+          <NavbarDashButton
+            className="discoverNavbar"
+            onClick={this.toggleExpand}
+          />
         </Navbar.Collapse>
       </Navbar>
     );

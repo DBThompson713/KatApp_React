@@ -18,25 +18,22 @@ const Dashboard = () => {
     return <h1>Loading...</h1>;
   }
 
-  console.log(user);
-
-return (
+  return (
     <Fragment>
       <div id="dashboard-container">
         <Row id="DashboardRow1">
-          <h1>{user.nickname}'s Dashboard</h1>
+          <h4>{user.nickname}'s Dashboard</h4>
         </Row>
         <Row>
-            <Card style={{ width: '24rem' }}>
-                <Card.Header>Profile</Card.Header>
-                <ListGroup variant="flush">
-                    <ListGroup.Item>Nickname: {user.nickname}</ListGroup.Item>
-                    <ListGroup.Item>Email: {user.email}</ListGroup.Item>
-                </ListGroup>
-            </Card>
+          <Card style={{ width: "24rem" }}>
+            <Card.Header>Profile</Card.Header>
+            <ListGroup variant="flush">
+              <ListGroup.Item>Nickname: {user.nickname}</ListGroup.Item>
+              <ListGroup.Item>Email: {user.email}</ListGroup.Item>
+            </ListGroup>
+          </Card>
         </Row>
         <Row id="DashboardRow2">
-
           <Col id="DashboardCardCol1">
             <NavLink to="/FavouriteRecipesPage">
               <Card id="dashboardCard" style={{ width: "18rem" }}>
@@ -76,7 +73,6 @@ return (
               </Card>
             </NavLink>
           </Col>
-
         </Row>
         <Row id="DashboardRow3">
           <NavLink to="/NewRecipePage">
