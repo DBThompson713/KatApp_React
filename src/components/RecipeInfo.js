@@ -50,9 +50,6 @@ class RecipeInfo extends Component {
                       return <Card.Text key={index}>{ingredient}</Card.Text>;
                     })}
                 </Col>
-                {/* <Col xs={6}>
-                  <Card.Text>1/2 cup orange rind</Card.Text>
-                </Col> */}
               </Row>
             </Container>
           </Card.Body>
