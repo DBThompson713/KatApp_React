@@ -10,7 +10,6 @@ const WizardPageOne = props => {
 
   const { handleSubmit, pristine, reset, submitting} = props;
   return (
-    <div>
       <form onSubmit={handleSubmit}>
         <Field // holds recipe name
           name="title"
@@ -67,14 +66,12 @@ const WizardPageOne = props => {
           </div>
           <div>
           <button // previous button
-            type="submit"
             className="previousButton">
             Next
           </button>
         </div>
         </div>
       </form>
-    </div>
   );
 };
 

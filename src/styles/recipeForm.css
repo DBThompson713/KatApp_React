@@ -47,6 +47,10 @@ li {
   max-width: 100vw;
 }
 
+#recipeRow form div {
+  margin-bottom: 20px;
+}
+
 #recipeRow input {
   max-width: 70%;
 }
@@ -69,6 +73,13 @@ li {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Buttons */
