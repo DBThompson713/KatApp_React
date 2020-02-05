@@ -1,6 +1,6 @@
 // global store of data
 
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, compose } from "redux";
 import reducers from "./reducers";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

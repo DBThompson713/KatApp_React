@@ -50,16 +50,23 @@ class Comment extends Component {
             {comments &&
               comments.map(comment => {
                 return (
-                  <>
-                    <Container>
-                      <Row bsPrefix="custom-comment-row">
+                  <div key={Math.random(6) * 100}>
+                    <Container key={Math.random(6) * 100}>
+                      <Row
+                        bsPrefix="custom-comment-row"
+                        key={Math.random(6) * 100}
+                      >
                         <Col xs={12} md={8}>
                           <Card.Title as="h5" key={comment.nickname}>
                             {comment.nickname}
                           </Card.Title>
                         </Col>
-                        <Col xs={6} md={4}>
-                          <Card.Title as="h6" key={comment.dateOfComment}>
+                        <Col xs={6} md={4} key={Math.random(6) * 100}>
+                          <Card.Title
+                            as="h6"
+                            key={comment.dateOfComment}
+                            key={comment.dateOfComment}
+                          >
                             {comment.dateOfComment.slice(0, 10)}
                           </Card.Title>
                         </Col>
@@ -68,7 +75,7 @@ class Comment extends Component {
 
                     <Card.Text key={comment.body}>{comment.body}</Card.Text>
                     <hr></hr>
-                  </>
+                  </div>
                 );
               })}
           </Card.Body>
