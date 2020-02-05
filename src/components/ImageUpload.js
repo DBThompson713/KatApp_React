@@ -1,8 +1,8 @@
-import S3FileUpload from "react-s3";
-import ReactS3 from "react-s3";
+// import S3FileUpload from "react-s3";
+// import ReactS3 from "react-s3";
 import React from "react";
 import { uploadFile } from "react-s3";
-import ReactDom from "react-dom";
+// import ReactDom from "react-dom";
 
 const config = {
   bucketName: process.env.REACT_APP_BUCKET_NAME,
@@ -27,7 +27,11 @@ class ImageUpload extends React.Component {
   };
 
   render() {
-    return <input type="file" onChange={this.upload} />;
+    return (
+      <div>
+        <input type="file" onChange={this.upload} />
+      </div>
+    );
   }
 }
 

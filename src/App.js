@@ -13,11 +13,10 @@ import Dashboard from "./components/pages/DashboardPage";
 import NewRecipe from "./components/pages/NewRecipePage";
 import { useAuth0 } from "./react-auth0-spa";
 import PrivateRoute from "./components/PrivateRoute";
-import { Provider } from "react-redux";
 import AdminDashboard from "./components/pages/AdminDashboardPage";
 import ExternalApi from "./views/ExternalApi";
 import ViewRecipe from "./components/pages/RecipePage";
-
+import FlagRecipes from "./components/pages/FlagRecipePage";
 
 function App() {
   const { loading } = useAuth0();
@@ -31,6 +30,7 @@ function App() {
       <>
         <Navbar />
         <Switch>
+          <Route exact path="/FlagRecipePage/:id" component={FlagRecipes} />
           <Route exact path="/" component={HomePage} />
           <Route exact path="/DiscoverPage" component={Discover} />
           <Route exact path="/KidsCornerPage" component={KidsCorner} />
@@ -51,7 +51,6 @@ function App() {
             component={AdminDashboard}
           />
           <Route exact path="/RecipePage/:id" component={ViewRecipe} />
-          {/* <PrivateRoute exact path="/RecipePage/:id/comment" component={Comment} /> */}
         </Switch>
       </>
     </BrowserRouter>
