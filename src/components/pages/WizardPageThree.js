@@ -29,12 +29,12 @@ const WizardPageThree = props => {
         </button>
         </div>
         <div>
-        <button // submit button
+        <Link to="AllRecipePage"><button // submit button
           className="previousButton"
           type="previousButton" 
           disabled={submitting}>
           Submit Recipe
-        </button>
+        </button></Link>
       </div>
       </div>
     </form>
