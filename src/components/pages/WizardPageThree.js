@@ -47,7 +47,7 @@ const renderSteps = ({ fields, meta: { touched, error, submitFailed } }) => (
   <>
     {fields.map((step, index) => (
       <React.Fragment key={index}>
-        <div className="inputFields flexRow">
+        <div className="inputFields flexRow ingredientAndRemove">
           <div>
             <Field
               name={`${step}`}
