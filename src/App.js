@@ -17,6 +17,8 @@ import AdminDashboard from "./components/pages/AdminDashboardPage";
 import ExternalApi from "./views/ExternalApi";
 import ViewRecipe from "./components/pages/RecipePage";
 import FlagRecipes from "./components/pages/FlagRecipePage";
+import FlagRecipeForm from "./components/forms/FlagRecipeForm";
+import FlaggedRecipesIndexPage from "./components/pages/FlaggedRecipesIndexPage";
 
 function App() {
   const { loading } = useAuth0();
@@ -31,6 +33,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/FlagRecipePage/:id" component={FlagRecipes} />
+          <Route exact path="/FlaggedRecipesIndexPage" component={FlaggedRecipesIndexPage} />
           <Route exact path="/" component={HomePage} />
           <Route exact path="/DiscoverPage" component={Discover} />
           <Route exact path="/KidsCornerPage" component={KidsCorner} />
