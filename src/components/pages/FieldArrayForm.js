@@ -22,7 +22,7 @@ const FieldArraysForm = props => {
           <button // previous button
             type="submit"
             className="previousButton">
-            Previous page
+            Previous
           </button>
         </div>
         <div>
@@ -39,7 +39,7 @@ const FieldArraysForm = props => {
             className="previousButton"
             type="submit"
             disabled={submitting}>
-            Next page >
+            Next
           </button>
           </div>
         </div>
@@ -56,7 +56,7 @@ const renderIngredients = ({
     {/* <ul id="ingredientAdd"> */}
     {fields.map((ingredient, index) => (
       <React.Fragment key={index}>
-        <div id="inputFields">
+        <div className="inputFields flexRow">
           <Field
             name={`${ingredient}`}
             type="text"

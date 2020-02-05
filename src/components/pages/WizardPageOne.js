@@ -8,7 +8,7 @@ const WizardPageOne = props => {
 
   // const  { DOM: { textarea } } = React
 
-  const { handleSubmit } = props;
+  const { handleSubmit, pristine, reset, submitting} = props;
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -55,11 +55,24 @@ const WizardPageOne = props => {
           label="Yield"
           placeholder="Add value in minutes"
         />
-        <button // button: next
-          type="submit"
-          className="nextButton">
-          Next Page
-        </button>
+      <div className="flexRow">
+        <div>
+          <button
+            className="previousButton"
+            type="button"
+            disabled={pristine || submitting}
+            onClick={reset}>
+            Clear all input
+          </button>
+          </div>
+          <div>
+          <button // previous button
+            type="submit"
+            className="previousButton">
+            Next
+          </button>
+        </div>
+        </div>
       </form>
     </div>
   );
