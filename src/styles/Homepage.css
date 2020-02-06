@@ -1,6 +1,7 @@
 /* Common Styling */
+
 #homepage {
-  margin: 8.2vh 0 0 0;
+  margin: 0;
   width: 100vw;
 }
 
@@ -115,11 +116,12 @@ h1 {
 }
 
 #bioPic {
-  height: auto;
+  max-height: 20rem;
   max-width: 80%;
   border-radius: 80%;
   margin-left: 10%;
-  padding-top: 50%;
+  margin-top: 20%;
+  /* padding-top: 50%; */
 }
 
 #socialButtons {
@@ -133,18 +135,42 @@ h1 {
   max-height: 6rem;
 }
 
+.home-page-button {
+  border: 0;
+}
+
 .register {
   background-color: rgba(150, 0, 14, 0.8) !important;
 }
 
-/* Responsive stylings */
+#bioContainer {
+  margin-top: 10vh;
+}
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 740px) {
   #rightTop {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 15%;
+  }
+
+  #row3none {
+    display: none;
+  }
+
+  #bioContainer {
+    margin-top: 0;
+  }
+
+  #headline {
+    /* padding: 0 1rem 0 2.5rem; */
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
   }
 
   #Homepage.col-6 {
@@ -153,11 +179,12 @@ h1 {
     align-items: center;
   }
 
-  #secondRowImage {
-    display: flex;
+  div#secondRowImage {
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 0;
+    padding: 0;
   }
 
   #loginButtons .btn {
@@ -166,7 +193,7 @@ h1 {
     padding: 7px;
   }
   #row3 {
-    height: 100vh;
+    height: 89vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,6 +201,7 @@ h1 {
     padding: 0 0.5rem;
   }
   #headline {
+    height: 89vh;
     padding: 0 0.5rem 0 0.5rem;
   }
   #row2 {
@@ -194,10 +222,52 @@ h1 {
   }
 
   #bioPic {
-    max-width: 95%;
+    display: none;
+  }
+
+  #bioPicMobile {
+    max-width: 65%;
+    max-height: 20rem;
     height: auto;
     border-radius: 80%;
-    margin-left: 1%;
-    padding-top: 80%;
+    margin-bottom: -1.2rem;
+  }
+
+  #bio h1 {
+    margin: 0rem auto;
+  }
+
+  #bioMobileTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #DashboardRow2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
+@media only screen and (max-width: 1000px) {
+  #halfScreenImagesTwo {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 740px) {
+  #bioPicMobile {
+    display: none;
+  }
+}
+
+/* @media only screen and (max-width: 770px) {
+  #bioPicMobile {
+    max-width: 65%;
+    max-height: 20rem;
+    height: auto;
+    border-radius: 80%;
+    margin-bottom: -1.2rem;
+  }
+} */

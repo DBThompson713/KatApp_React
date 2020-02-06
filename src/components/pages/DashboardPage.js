@@ -4,7 +4,7 @@ import "./../../styles/Dashboard.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import { Container, Row, Col, Button } from "react-bootstrap";
 import { useAuth0 } from "../../react-auth0-spa";
-import { Row, Col, Card, Button } from "react-bootstrap";
+import { Row, Col, Card, Button, ListGroup } from "react-bootstrap";
 import favRecipeImage from "./../../assets/foodHeart.jpeg";
 import allRecipeImage from "./../../assets/food1.jpeg";
 import featRecipeImage from "./../../assets/food2.jpeg";
@@ -18,18 +18,25 @@ const Dashboard = () => {
     return <h1>Loading...</h1>;
   }
 
-  console.log(user);
-
   return (
     <Fragment>
       <div id="dashboard-container">
         <Row id="DashboardRow1">
-          <h2>{user.nickname}'s Dashboard</h2>
+          <h4>{user.nickname}'s Dashboard</h4>
+        </Row>
+        <Row>
+          <Card style={{ width: "24rem" }}>
+            <Card.Header>Profile</Card.Header>
+            <ListGroup variant="flush">
+              <ListGroup.Item>Nickname: {user.nickname}</ListGroup.Item>
+              <ListGroup.Item>Email: {user.email}</ListGroup.Item>
+            </ListGroup>
+          </Card>
         </Row>
         <Row id="DashboardRow2">
-          <Col xs={12} md={4}>
+          <Col id="DashboardCardCol1">
             <NavLink to="/FavouriteRecipesPage">
-              <Card style={{ width: "17rem" }}>
+              <Card id="dashboardCard" style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={favRecipeImage} />
                 <Card.Body>
                   <Card.Title>Favourite Recipes</Card.Title>
@@ -40,9 +47,10 @@ const Dashboard = () => {
               </Card>
             </NavLink>
           </Col>
-          <Col xs={12} md={4}>
-            <NavLink to="/AllRecipesPage">
-              <Card style={{ width: "18rem" }}>
+
+          <Col id="DashboardCardCol2">
+            <NavLink to="/AllRecipePage">
+              <Card id="dashboardCard" style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={allRecipeImage} />
                 <Card.Body>
                   <Card.Title>All Recipes</Card.Title>
@@ -53,9 +61,10 @@ const Dashboard = () => {
               </Card>
             </NavLink>
           </Col>
-          <Col xs={12} md={4}>
+
+          <Col>
             <NavLink to="/FeaturedRecipesPage">
-              <Card style={{ width: "18rem" }}>
+              <Card id="dashboardCard" style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={featRecipeImage} />
                 <Card.Body>
                   <Card.Title>Featured Recipes</Card.Title>

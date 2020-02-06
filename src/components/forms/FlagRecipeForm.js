@@ -1,49 +1,44 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { setRecipes, flagRecipe } from "./../../actions";
-import { field, reduxForm } from "redux-form";
-// import Input from "./fields/input";
+import KatAppApi from "./../../api/openHealthyRecipesApp";
+import withAuth0Props from "./../withAuth0Props";
 
-class FlagRecipeForm extends Component {
+class FlagRecipeForm extends React.Component {
   state = {
-    reasonForFlag: "",
-    additionalInfo: "",
-    isFlagged: false,
-    errorMessage: null
+    reasonForFlag: ""
   };
 
-  onFormSubmit = async formValues => {
-    const { reasonForFlag, additionalInfo } = formValues;
-    const { flagRecipe } = this.props;
+  onFormSubmit = async event => {
+    event.preventDefault();
+    let { id } = this.props.match.params;
+    let { history } = this.props;
 
-    try {
-      await flagRecipe({ reasonForFlag, additionalInfo });
-    } catch (error) {
-      this.setState({ errorMessage: error.message });
-    }
+    const response = await KatAppApi({
+      method: "put",
+      url: `/recipes/${id}`,
+      data: {
+        reasonForFlag: this.state.reasonForFlag
+      }
+    })
+      .then(history.push("/"))
+      .catch(err => console.log(err));
+  };
+
+  handleChange = event => {
+    this.setState({ reasonForFlag: event.target.value });
   };
 
   render() {
-    const { reasonForFlag, additionalInfo, errorMessage } = this.state;
-    const { handleSubmit, error, anyTouched } = this.props;
-    const isFlagged = true;
-
     return (
-      <>
-        <form onSubmit={handleSubmit(this.onFormSubmit)}>
-          <div>
-            <label>Reason for Flag</label>
-            <field name="flagReason" component={Input} type="text" />
-          </div>
-          <div>
-            <label>Additional information</label>
-            <field name="additionalInformation" component={Input} type="text" />
-          </div>
-          <input type="submit" value="Flag this recipe for review" />
-        </form>
-      </>
+      <form onSubmit={this.onFormSubmit}>
+        <input
+          type="text"
+          value={this.state.reasonForFlag}
+          onChange={this.handleChange}
+        />
+        <button>Flag Content</button>
+      </form>
     );
   }
 }
 
-export default connect(null, { FlagRecipe })(FlagRecipeForm);
+export default withAuth0Props(FlagRecipeForm);

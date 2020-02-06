@@ -1,8 +1,21 @@
-import axios from 'axios';
+import axios from "axios";
+import { getTokenSilently } from "./../react-auth0-spa";
 
-export default axios.create({
-    baseURL: 'http://localhost:3001'//,
-    // headers: {
-    //     Authorization: //'Client-ID 62ac8e81f1862820014900f9c19934bcdc46c833926f32d82067950f9dc2e711'
-    // }
+const api = axios.create({
+  baseURL: "https://well-kids-api.herokuapp.com"
 });
+
+api.interceptors.request.use(
+  async config => {
+    const token = await getTokenSilently();
+
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return config;
+  },
+  error => Promise.reject(error)
+);
+
+export default api;

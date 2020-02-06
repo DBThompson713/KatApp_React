@@ -13,6 +13,7 @@ class FeaturedRecipes extends Component {
           <Row id="row1">
             <h1>Featured Recipes</h1>
           </Row>
+            <h4>Coming Soon!</h4>
         </Container>
       </>
     );

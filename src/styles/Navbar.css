@@ -5,6 +5,11 @@
   display: flex;
   padding: 0.25rem 1.15rem;
   width: 100vw;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
 
 a:hover {
@@ -52,5 +57,8 @@ a {
 @media only screen and (max-width: 1000px) {
   #myAccountLink {
     margin: 1rem auto;
+  }
+  .navbarFix {
+    margin-top: -0.65rem !important;
   }
 }

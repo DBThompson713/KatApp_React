@@ -11,24 +11,29 @@ import FeaturedRecipes from "./components/pages/FeaturedRecipesPage";
 import MyAccount from "./components/pages/MyAccountPage";
 import Dashboard from "./components/pages/DashboardPage";
 import NewRecipe from "./components/pages/NewRecipePage";
-// import { useAuth0 } from "./react-auth0-spa";
+import { useAuth0 } from "./react-auth0-spa";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminDashboard from "./components/pages/AdminDashboardPage";
 import ExternalApi from "./views/ExternalApi";
 import ViewRecipe from "./components/pages/RecipePage";
+import FlagRecipes from "./components/pages/FlagRecipePage";
+import FlagRecipeForm from "./components/forms/FlagRecipeForm";
+import FlaggedRecipesIndexPage from "./components/pages/FlaggedRecipesIndexPage";
 
 function App() {
-  // const { loading } = useAuth0();
+  const { loading } = useAuth0();
 
-  // if (loading) {
-  //   return <div>Site Loading...</div>;
-  // }
+  if (loading) {
+    return <div>Site Loading...</div>;
+  }
 
   return (
     <BrowserRouter>
       <>
         <Navbar />
         <Switch>
+          <Route exact path="/FlagRecipePage/:id" component={FlagRecipes} />
+          <Route exact path="/FlaggedRecipesIndexPage" component={FlaggedRecipesIndexPage} />
           <Route exact path="/" component={HomePage} />
           <Route exact path="/DiscoverPage" component={Discover} />
           <Route exact path="/KidsCornerPage" component={KidsCorner} />
@@ -38,6 +43,7 @@ function App() {
             path="/FeaturedRecipesPage"
             component={FeaturedRecipes}
           />
+
           <PrivateRoute exact path="/MyAccountPage" component={MyAccount} />
           <PrivateRoute exact path="/DashboardPage" component={Dashboard} />
           <PrivateRoute exact path="/NewRecipePage" component={NewRecipe} />
