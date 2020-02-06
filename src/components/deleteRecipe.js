@@ -24,7 +24,10 @@ class DeleteButton extends Component {
 
   render() {
     let { user } = this.props;
-    console.log(this.props);
+
+    if (!user || user.email !== "littlemisskat13@hotmail.com") {
+      return <></>;
+    }
     if (user.email === "littlemisskat13@hotmail.com") {
       return (
         <>

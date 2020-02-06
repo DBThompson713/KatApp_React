@@ -5,10 +5,10 @@ import { uploadFile } from "react-s3";
 // import ReactDom from "react-dom";
 
 const config = {
-  bucketName: process.env.REACT_APP_BUCKET_NAME,
+  bucketName: process.env.REACT_APP_XX_BN,
   region: "ap-southeast-2",
-  accessKeyId: process.env.REACT_APP_ACCESS_KEY,
-  secretAccessKey: process.env.REACT_APP_SECRET_KEY
+  accessKeyId: process.env.REACT_APP_XX_AK,
+  secretAccessKey: process.env.REACT_APP_XX_SK
 };
 
 class ImageUpload extends React.Component {

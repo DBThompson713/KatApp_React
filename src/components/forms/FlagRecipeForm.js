@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import KatAppApi from "./../../api/openHealthyRecipesApp";
+import withAuth0Props from "./../withAuth0Props";
 
 class FlagRecipeForm extends React.Component {
   state = {
@@ -9,6 +10,7 @@ class FlagRecipeForm extends React.Component {
   onFormSubmit = async event => {
     event.preventDefault();
     let { id } = this.props.match.params;
+    let { history } = this.props;
 
     const response = await KatAppApi({
       method: "put",
@@ -16,8 +18,9 @@ class FlagRecipeForm extends React.Component {
       data: {
         reasonForFlag: this.state.reasonForFlag
       }
-    }).catch(err => console.log(err));
-    console.log(response);
+    })
+      .then(history.push("/"))
+      .catch(err => console.log(err));
   };
 
   handleChange = event => {
@@ -38,4 +41,4 @@ class FlagRecipeForm extends React.Component {
   }
 }
 
-export default FlagRecipeForm;
+export default withAuth0Props(FlagRecipeForm);
