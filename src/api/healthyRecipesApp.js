@@ -2,7 +2,7 @@ import axios from "axios";
 import { getTokenSilently } from "./../react-auth0-spa";
 
 const api = axios.create({
-  baseURL: "http://localhost:3001"
+  baseURL: "https://well-kids-api.herokuapp.com"
 });
 
 api.interceptors.request.use(
