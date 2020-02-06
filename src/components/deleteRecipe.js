@@ -3,19 +3,22 @@ import "normalize.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useAuth0 } from "./../react-auth0-spa";
 import { Row, Col, Card, Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
 import healthyRecipesApp from "./../api/healthyRecipesApp";
 import withAuth0Props from "./withAuth0Props";
+import "./../styles/deleteButton.css";
 
 class DeleteButton extends Component {
   onButtonSubmit = async event => {
     event.preventDefault();
-    let { id } = this.props.match.params;
 
+    let { id } = this.props.match.params;
+    let { history } = this.props;
     const response = await healthyRecipesApp({
       method: "delete",
       url: `/recipes/${id}`
-    }).catch(err => console.log(err));
+    })
+      .then(history.push("/"))
+      .catch(err => console.log(err));
     // this.props.addComment(response.data);
   };
 
@@ -25,7 +28,9 @@ class DeleteButton extends Component {
     if (user.email === "littlemisskat13@hotmail.com") {
       return (
         <>
-          <button onClick={this.onButtonSubmit}>Delete Recipe</button>;
+          <button id="deleteButtonStyle" onClick={this.onButtonSubmit}>
+            Delete
+          </button>
         </>
       );
     }

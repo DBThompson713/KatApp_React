@@ -5,11 +5,10 @@ import renderField from "./renderField";
 import imageUpload from "./../ImageUpload";
 
 const WizardPageOne = props => {
-  // const  { DOM: { textarea } } = React
-
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
+      <h2>New Recipes</h2>
       <Field // holds recipe name
         name="title"
         type="text"
