@@ -6,6 +6,7 @@ import FlagIcon from "./../assets/flag_icon.png";
 import RateRecipe from "./rateRecipe";
 import "./../styles/RecipeInfo.css";
 import { Link } from "react-router-dom";
+import DeleteButton from "./deleteRecipe";
 
 class RecipeInfo extends Component {
   // state = { recipe: [] };
@@ -45,6 +46,9 @@ class RecipeInfo extends Component {
                     />
                   </Link>
                 </Col>
+              </Row>
+              <Row>
+                <DeleteButton recipe={recipe} {...this.props} />
               </Row>
             </Container>
           </Card.Body>

@@ -8,7 +8,7 @@ import { Row, Col, Card, Button } from "react-bootstrap";
 import favRecipeImage from "./../../assets/foodHeart.jpeg";
 import allRecipeImage from "./../../assets/food1.jpeg";
 import featRecipeImage from "./../../assets/food2.jpeg";
-import flaggedRecipesImage from './../../assets/food3.jpg';
+import flaggedRecipesImage from "./../../assets/food3.jpg";
 import { NavLink } from "react-router-dom";
 
 const AdminDashboard = () => {
@@ -42,7 +42,7 @@ const AdminDashboard = () => {
             </NavLink>
           </Col>
           <Col xs={12} sm={6} md={6} lg={3}>
-            <NavLink to="/AllRecipesPage">
+            <NavLink to="/AllRecipePage">
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={allRecipeImage} />
                 <Card.Body>
@@ -72,24 +72,14 @@ const AdminDashboard = () => {
                 <Card.Img variant="top" src={flaggedRecipesImage} />
                 <Card.Body>
                   <Card.Title>Flagged Recipes</Card.Title>
-                  <Card.Text>Recipes that have been flagged by the community</Card.Text>
+                  <Card.Text>
+                    Recipes that have been flagged by the community
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </NavLink>
           </Col>
-
         </Row>
-
-
-
-
-
-
-
-
-
-
-
 
         <Row id="DashboardRow3">
           <Col>

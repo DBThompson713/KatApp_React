@@ -9,7 +9,12 @@ const WizardPageThree = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-      <FieldArray name="steps" component={renderSteps} />
+      <h2>Steps</h2>
+      <FieldArray
+        name="steps"
+        component={renderSteps}
+        placeholder="Add steps 1-by-1"
+      />
       <div className="flexRow">
         <div>
           <button // previous button

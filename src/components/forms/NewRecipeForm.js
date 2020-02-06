@@ -9,6 +9,7 @@ import { FieldArray } from "redux-form";
 import FieldArraysForm from "./../pages/FieldArrayForm";
 import "./../../styles/recipeForm.css";
 import KatAppApi from "./../../api/healthyRecipesApp";
+import withAuth0Props from "./../withAuth0Props";
 
 class NewRecipeForm extends Component {
   constructor(props) {
@@ -38,8 +39,11 @@ class NewRecipeForm extends Component {
 
   onSubmit = () => {
     let data = this.props.form.wizard.values;
+    let { history } = this.props;
     // console.log(data);
-    KatAppApi.post("/recipes", data);
+    KatAppApi.post("/recipes", data)
+      .then(history.push("/"))
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -73,4 +77,4 @@ NewRecipeForm.propTypes = {
   onSubmit: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, {})(NewRecipeForm);
+export default withAuth0Props(connect(mapStateToProps, {})(NewRecipeForm));

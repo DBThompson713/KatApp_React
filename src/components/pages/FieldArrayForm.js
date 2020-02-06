@@ -56,6 +56,7 @@ const renderIngredients = ({
   meta: { touched, error, submitFailed }
 }) => (
   <>
+    <h2>Ingredients</h2>
     {/* <ul id="ingredientAdd"> */}
     {fields.map((ingredient, index) => (
       <React.Fragment key={index}>
