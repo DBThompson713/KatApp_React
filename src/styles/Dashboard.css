@@ -76,7 +76,7 @@
   align-self: center;
   justify-self: center;
 }
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 900px) {
   #dashboardCard {
     margin: 1rem 18vw;
   }

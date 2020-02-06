@@ -1,6 +1,6 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-// import validate from "./validate";
+import validate from "./validate";
 import renderField from "./renderField";
 import imageUpload from "./../ImageUpload";
 
@@ -79,6 +79,6 @@ const WizardPageOne = props => {
 export default reduxForm({
   form: "wizard",
   destroyOnUnmount: false,
-  forceUnregisterOnUnmount: true
-  // validate
+  forceUnregisterOnUnmount: true,
+  validate
 })(WizardPageOne);
