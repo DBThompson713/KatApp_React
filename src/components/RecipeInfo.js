@@ -30,7 +30,7 @@ class RecipeInfo extends Component {
             <Container>
               <Row bsPrefix="custom-comment-row">
                 <Col xs={4} md={4}>
-                  <img src={unfavouritedIcon} alt="empty heart" />
+                  <img src={unfavouritedIcon} alt="empty heart" onClick={() => alert("Favourites coming soon")} />
                 </Col>
                 <Col xs={4} md={4}>
                   <RateRecipe recipe={recipe} {...this.props} />
