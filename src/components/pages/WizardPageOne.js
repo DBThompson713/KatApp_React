@@ -21,6 +21,7 @@ const WizardPageOne = props => {
         name="image"
         type="file"
         component={imageUpload}
+        required
       />
       <div>
         <Field // holds recipe description
@@ -50,7 +51,7 @@ const WizardPageOne = props => {
         type="text"
         component={renderField}
         label="Yield"
-        placeholder="Add value in minutes"
+        placeholder="How many servings?"
       />
       <div className="flexRow">
         <div>
