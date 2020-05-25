@@ -1,13 +1,13 @@
-import React from "react";
-import "normalize.css";
-import "./.././../styles/Homepage.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import kat from "./../../assets/KatBioImage_Test.JPG";
-import tempImage from "./../../assets/rainbow-fruit.png";
-import facebook from "./../../assets/image.png";
-import instagram from "./../../assets/instagram-logo.svg";
-import { useAuth0 } from "./../../react-auth0-spa";
+import React from 'react';
+import 'normalize.css';
+import './.././../styles/Homepage.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import kat from './../../assets/KatBioImage_Test.JPG';
+import tempImage from './../../assets/rainbow-fruit-2.png';
+import facebook from './../../assets/image.png';
+import instagram from './../../assets/instagram-logo.svg';
+import { useAuth0 } from './../../react-auth0-spa';
 
 const Homepage = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
